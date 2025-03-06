@@ -7,10 +7,9 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 aiohttp = "^3.7.4.post0"
-arrow = "^0.14.7"
-ics = "0.7"
+ics = "^0.7.2"
 lxml = "^4.6.3"
 python-dotenv = "^0.15.0"
 

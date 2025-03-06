@@ -1,7 +1,7 @@
 import asyncio
 from logging import getLogger
 from math import ceil
-from typing import Callable, Dict, Optional, Sequence, Set, Tuple, Union
+from typing import Dict, Optional, Sequence, Set, Tuple
 
 from aiohttp import ClientSession, ClientTimeout
 from lxml.html import document_fromstring
@@ -24,7 +24,8 @@ log = getLogger(__name__)
 
 
 class Holodule:
-    def __init__(self, holodule_page: str, youtube_key: str, save_dir: str) -> None:
+    def __init__(self, holodule_page: str,
+                 youtube_key: str, save_dir: str) -> None:
         self.page_url = holodule_page
         self.yt_key = youtube_key
         self.save_dir = save_dir
@@ -33,8 +34,8 @@ class Holodule:
         self.videos = {}
 
     async def run(self) -> int:
-        # ClientSession.__aenter__ does nothing
-        # but ClientSession.__aexit__ closes this sessoin, so we have to do that.
+        # ClientSession.__aenter__ does nothing but ClientSession.__aexit__
+        # closes this sessoin, so we have to do that.
         # https://github.com/aio-libs/aiohttp/blob/fe647a08d1acb53404b703b46b37409602ab18b4/aiohttp/client.py#L986
         self.session = ClientSession(
             timeout=ClientTimeout(total=30),
@@ -83,12 +84,13 @@ class Holodule:
             async with self.session.get(f"{self.page_url}/{target}") as resp:
                 text = await resp.text()
                 if resp.status != 200:
-                    log.error(f"({target}) failed to get: {resp.status} {text}'")
+                    log.error(
+                        f"({target}) failed to get: {resp.status} {text}'")
                     return
 
                 return target, text
         except:
-            log.error(f"unhandled: ", exc_info=True)
+            log.error("unhandled: ", exc_info=True)
 
     async def get_pages(self, targets: Sequence[str]) -> Dict[str, str]:
         pages: Dict[str, str] = {}  # target: content
@@ -107,7 +109,8 @@ class Holodule:
         for i in range(ceil(len(videos) / CHUNK_SIZE)):
             tasks.append(
                 self.do_get_videos(
-                    videos[i * CHUNK_SIZE : min(len(videos), (i + 1) * CHUNK_SIZE)]
+                    videos[i *
+                           CHUNK_SIZE: min(len(videos), (i + 1) * CHUNK_SIZE)]
                 )
             )
 
