@@ -1,67 +1,74 @@
-# Holodule-ICS
+# Holodule iCalendar
 
-[日本語] [[English]](https://github.com/sarisia/holodule-ics/blob/master/README-en.md)
+[日本語] [\[English\]](README-en.md)
 
-ホロライブの配信予定 [ホロジュール](https://schedule.hololive.tv/) を
-任意のカレンダーアプリ等に登録できる `ics` ファイル
+Holodule iCalendarは、[ホロジュール](https://schedule.hololive.tv/)（ホロライ
+ブの配信予定）からiCalendarファイル（拡張子は`.ics`）を生成配信するプログラム
+です。このファイル形式は、多くのカレンダーアプリ等に登録できます。
 
 ![holodule](https://user-images.githubusercontent.com/33576079/76172492-00a80e80-61da-11ea-9590-a6bcc4a4982d.png)
 
-# URL一覧
+## URL一覧
 
-| カテゴリ | URL |
-| :-: | - |
-| すべて | https://sarisia.cc/holodule-ics/holodule-all.ics |
-| ホロライブ | https://sarisia.cc/holodule-ics/holodule-hololive.ics |
-| ホロスターズ | https://sarisia.cc/holodule-ics/holodule-holostars.ics |
-| Indonesia | https://sarisia.cc/holodule-ics/holodule-indonesia.ics |
-| English | https://sarisia.cc/holodule-ics/holodule-english.ics |
-| HOLOSTARS English | https://sarisia.cc/holodule-ics/holodule-holostars_english.ics |
-| DEV_IS | https://sarisia.cc/holodule-ics/holodule-dev_is.ics |
+* [全体](https://gemmaro.github.io/holodule-ics/holodule-all.ics)
+* [ホロライブ](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)
+* [ホロスターズ](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)
+* [hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-indonesia.ics)
+* [hololive English](https://gemmaro.github.io/holodule-ics/holodule-english.ics)
+* [HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-holostars_english.ics)
+* [hololive DEV\_IS](https://gemmaro.github.io/holodule-ics/holodule-dev_is.ics)
 
-# 設定例
+## 設定例
 
-## iOS (iPhone/iPad)
+※操作方法はOSのバージョンにより異なる可能性があります。
 
-* ホーム画面の `設定 (Settings)` を開く
-* `パスワードとアカウント (Passwords & Accounts)` -> `アカウントを追加 (Add Account)`
-* 一番下の `その他 (Other)`
-* 一番下の `照会するカレンダーを追加 (Add Subscribed Calendar)`
-* URL を貼り付けて `次へ (Next)`
-* そのまま右上の `保存 (Save)`
+### iOS (iPhone/iPad)
 
-## Google Calendar (PC)
+* ホーム画面の「設定」を開く
+* 「パスワードとアカウント」→「アカウントを追加」
+* 一番下の「その他」
+* 一番下の「照会するカレンダーを追加」
+* URL を貼り付けて「次へ」
+* そのまま右上の「保存」
 
-* `設定` を開く
-* 左側メニュー `カレンダーの追加` -> `URL で追加`
+### Google Calendar (PC)
+
+* 「設定」を開く
+* 左側メニュー「カレンダーの追加」→「URL で追加」
 * URL を貼り付け
-* `カレンダーを追加`
+* 「カレンダーを追加」
 
-PC から追加後はモバイル版 Google Calendar でも閲覧できます
+PC から追加後はモバイル版 Google Calendar でも閲覧できます。
 
-# 雑記
+## 雑記
 
-## カレンダーの更新頻度
+### カレンダーの更新頻度
 
-ホロジュールと同じく、15分に1度更新されます。
-ただし、ホロジュールの更新時間が不明なため、最大で15分の遅延が発生します。
+1時間に1回としています（ホロジュールは15分に1度のようです）。
 
-カレンダーアプリの更新頻度によりカレンダーへの反映が遅くなる可能性があります。
+カレンダーアプリの更新頻度により、カレンダーへの反映が遅くなる可能性があります。
+iOS では、設定より更新頻度を設定できます。
 
-iOS では設定より更新頻度を設定できるので概ねまともに参照できますが、
-Google Calendar は更新頻度が低すぎて厳しいと思います。
+### 通知が欲しい
 
-## 通知が欲しい
+カレンダー側で通知を設定できるものがあります。
+YouTube の通知機能もご検討ください。
 
-カレンダー側で通知を設定できますが、ホロジュールの変動が激しいので
-素直に YouTube の通知機能を使ったほうが良いと思います。
+### 配信の長さについて
 
-## 配信の長さについて
+配信の長さは全て **2時間** に固定しています。
+ホロジュールでは、配信開始の予定時間のみが得られるためです。
 
-ホロジュールでは配信開始予定時間しか得られないため、配信の長さは全て **2時間**
-に固定しています。
+## バグ・要望
 
-# バグ・要望
+* [機能の要望など](https://github.com/gemmaro/holodule-ics/discussions)
+* [不具合の報告など](https://github.com/gemmaro/holodule-ics/issues)
 
-* [GitHub Issues](https://github.com/sarisia/holodule-ics/issues)
-* [Twitter](https://twitter.com/A1ces)
+## 謝辞
+
+このプログラムは[sarisia/holodule-ics](https://github.com/sarisia/holodule-ics)を元にしています。
+
+## 使用許諾
+
+このプログラムはMITライセンスの元に配布されます。
+詳細は[LICENSEファイル](LICENSE)をご参照ください。

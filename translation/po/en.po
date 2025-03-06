@@ -1,0 +1,348 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Holodule\n"
+"POT-Creation-Date: 2025-03-13 20:59+0900\n"
+"PO-Revision-Date: 2025-03-13 21:02+0900\n"
+"Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title #
+#: ../README.md:1
+#, no-wrap
+msgid "Holodule iCalendar"
+msgstr "Holodule iCalendar"
+
+#. type: Plain text
+#: ../README.md:4
+msgid "[日本語] [\\[English\\]](README-en.md)"
+msgstr "[\\[日本語\\]](README.md) [English]"
+
+#. type: Plain text
+#: ../README.md:8
+msgid ""
+"Holodule iCalendarは、[ホロジュール](https://schedule.hololive.tv/)（ホロラ"
+"イ ブの配信予定）からiCalendarファイル（拡張子は`.ics`）を生成配信するプログ"
+"ラム です。このファイル形式は、多くのカレンダーアプリ等に登録できます。"
+msgstr ""
+"Holodule iCalendar is a program that generates and distributes iCalendar "
+"files (with the extension `.ics`) from [Holodule](https://schedule.hololive."
+"tv/) (the streaming schedule for Hololive).  This file format can be "
+"registered with many calendar applications."
+
+#. type: Plain text
+#: ../README.md:10
+msgid ""
+"![holodule](https://user-images.githubusercontent."
+"com/33576079/76172492-00a80e80-61da-11ea-9590-a6bcc4a4982d.png)"
+msgstr ""
+"![holodule](https://user-images.githubusercontent."
+"com/33576079/76172492-00a80e80-61da-11ea-9590-a6bcc4a4982d.png)"
+
+#. type: Title ##
+#: ../README.md:11
+#, no-wrap
+msgid "URL一覧"
+msgstr "URLs"
+
+#. type: Bullet: '* '
+#: ../README.md:20
+msgid "[全体](https://gemmaro.github.io/holodule-ics/holodule-all.ics)"
+msgstr "[All](https://gemmaro.github.io/holodule-ics/holodule-all.ics)"
+
+#. type: Bullet: '* '
+#: ../README.md:20
+msgid ""
+"[ホロライブ](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)"
+msgstr "[hololive](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)"
+
+#. type: Bullet: '* '
+#: ../README.md:20
+msgid ""
+"[ホロスターズ](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)"
+msgstr "[HOLOSTARS](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)"
+
+#. type: Bullet: '* '
+#: ../README.md:20
+msgid ""
+"[hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-"
+"indonesia.ics)"
+msgstr "[hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-indonesia.ics)"
+
+#. type: Bullet: '* '
+#: ../README.md:20
+msgid ""
+"[hololive English](https://gemmaro.github.io/holodule-ics/holodule-english."
+"ics)"
+msgstr "[hololive English](https://gemmaro.github.io/holodule-ics/holodule-english.ics)"
+
+#. type: Bullet: '* '
+#: ../README.md:20
+msgid ""
+"[HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-"
+"holostars_english.ics)"
+msgstr "[HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-holostars_english.ics)"
+
+#. type: Bullet: '* '
+#: ../README.md:20
+msgid ""
+"[hololive DEV\\_IS](https://gemmaro.github.io/holodule-ics/holodule-dev_is."
+"ics)"
+msgstr "[hololive DEV\\_IS](https://gemmaro.github.io/holodule-ics/holodule-dev_is.ics)"
+
+#. type: Title ##
+#: ../README.md:21
+#, no-wrap
+msgid "設定例"
+msgstr "Configuration"
+
+#. type: Plain text
+#: ../README.md:24
+msgid "※操作方法はOSのバージョンにより異なる可能性があります。"
+msgstr "NOTE: The configuration may vary depending on the OS version."
+
+#. type: Title ###
+#: ../README.md:25
+#, no-wrap
+msgid "iOS (iPhone/iPad)"
+msgstr "iOS (iPhone/iPad)"
+
+#. type: Bullet: '* '
+#: ../README.md:33
+msgid "ホーム画面の「設定」を開く"
+msgstr "Go to the home screen and open the \"Settings\" app."
+
+#. type: Bullet: '* '
+#: ../README.md:33
+msgid "「パスワードとアカウント」→「アカウントを追加」"
+msgstr "\"Password & Accounts\" -> \"Add Account\""
+
+#. type: Bullet: '* '
+#: ../README.md:33
+msgid "一番下の「その他」"
+msgstr "\"Other\" at the bottom"
+
+#. type: Bullet: '* '
+#: ../README.md:33
+msgid "一番下の「照会するカレンダーを追加」"
+msgstr "\"Add Subscribed Calendar\" at the bottom"
+
+#. type: Bullet: '* '
+#: ../README.md:33
+msgid "URL を貼り付けて「次へ」"
+msgstr "Paste the URL then tap \"Next\""
+
+#. type: Bullet: '* '
+#: ../README.md:33
+msgid "そのまま右上の「保存」"
+msgstr "Tap \"save\""
+
+#. type: Title ###
+#: ../README.md:34
+#, no-wrap
+msgid "Google Calendar (PC)"
+msgstr "Google Calendar (PC)"
+
+#. type: Bullet: '* '
+#: ../README.md:40
+msgid "「設定」を開く"
+msgstr "Open \"Settings\""
+
+#. type: Bullet: '* '
+#: ../README.md:40
+msgid "左側メニュー「カレンダーの追加」→「URL で追加」"
+msgstr "\"Add calendar\" -> \"From URL\" at the left side"
+
+#. type: Bullet: '* '
+#: ../README.md:40
+msgid "URL を貼り付け"
+msgstr "Paste the URL"
+
+#. type: Bullet: '* '
+#: ../README.md:40
+msgid "「カレンダーを追加」"
+msgstr "\"Add calendar\""
+
+#. type: Plain text
+#: ../README.md:42
+msgid "PC から追加後はモバイル版 Google Calendar でも閲覧できます。"
+msgstr ""
+"Once added from your PC, it can also be viewed in the mobile version of "
+"Google Calendar."
+
+#. type: Title ##
+#: ../README.md:43
+#, no-wrap
+msgid "雑記"
+msgstr "Caverts"
+
+#. type: Title ###
+#: ../README.md:45
+#, no-wrap
+msgid "カレンダーの更新頻度"
+msgstr "Calendar update frequency"
+
+#. type: Plain text
+#: ../README.md:48
+msgid "1時間に1回としています（ホロジュールは15分に1度のようです。）。"
+msgstr "The update frequency is set to once per hour (it seems Holodule itself updates every 15 minutes)."
+
+#. type: Plain text
+#: ../README.md:51
+msgid ""
+"カレンダーアプリの更新頻度により、カレンダーへの反映が遅くなる可能性がありま"
+"す。 iOS では、設定より更新頻度を設定できます。"
+msgstr ""
+"The frequency at which the calendar app updates might affect how quickly "
+"changes appear in your calendar.  In iOS, you can adjust the update "
+"frequency in the settings."
+
+#. type: Title ###
+#: ../README.md:52
+#, no-wrap
+msgid "通知が欲しい"
+msgstr "I want notifications"
+
+#. type: Plain text
+#: ../README.md:56
+msgid ""
+"カレンダー側で通知を設定できるものがあります。 YouTube の通知機能もご検討くだ"
+"さい。"
+msgstr ""
+"Some calendars allow you to set notifications.  Please also consider using "
+"YouTube's notification feature."
+
+#. type: Title ###
+#: ../README.md:57
+#, no-wrap
+msgid "配信の長さについて"
+msgstr "Stream length"
+
+#. type: Plain text
+#: ../README.md:61
+msgid ""
+"配信の長さは全て **2時間** に固定しています。 ホロジュールでは、配信開始の予"
+"定時間のみが得られるためです。"
+msgstr "The duration of all streams is fixed at **2 hours**.  This is because only the scheduled start times of the streams are available from Holodule."
+
+#. type: Title ##
+#: ../README.md:62
+#, no-wrap
+msgid "バグ・要望"
+msgstr "Bugs? Feature requests?"
+
+#. type: Bullet: '* '
+#: ../README.md:66
+msgid "[機能の要望など](https://github.com/gemmaro/holodule-ics/discussions)"
+msgstr ""
+"[Feature requests](https://github.com/gemmaro/holodule-ics/discussions)"
+
+#. type: Bullet: '* '
+#: ../README.md:66
+msgid "[不具合の報告など](https://github.com/gemmaro/holodule-ics/issues)"
+msgstr "[Report problems](https://github.com/gemmaro/holodule-ics/issues)"
+
+#. type: Title ##
+#: ../README.md:67
+#, no-wrap
+msgid "謝辞"
+msgstr "Acknowledgements"
+
+#. type: Plain text
+#: ../README.md:70
+msgid ""
+"このプログラムは[sarisia/holodule-ics](https://github.com/sarisia/holodule-"
+"ics)を元にしています。"
+msgstr ""
+"This program is based on [sarisia/holodule-ics](https://github.com/sarisia/"
+"holodule-ics)."
+
+#. type: Title ##
+#: ../README.md:71
+#, no-wrap
+msgid "使用許諾"
+msgstr "License"
+
+#. type: Plain text
+#: ../README.md:74
+msgid ""
+"このプログラムはMITライセンスの元に配布されます。 詳細は[LICENSEファイル]"
+"(LICENSE)をご参照ください。"
+msgstr ""
+"This program is distributed under the MIT License.  For more details, please "
+"refer to the [LICENSE file](LICENSE)."
+
+#, no-wrap
+#~ msgid "Holodule-ICS"
+#~ msgstr "Holodule-ICS"
+
+#~ msgid ""
+#~ "[日本語] [[English]](https://github.com/sarisia/holodule-ics/blob/master/"
+#~ "README-en.md)"
+#~ msgstr ""
+#~ "[[日本語]](https://github.com/sarisia/holodule-ics/blob/master/README.md) "
+#~ "[English]"
+
+#~ msgid ""
+#~ "ホロライブの配信予定 [ホロジュール](https://schedule.hololive.tv/) を 任意"
+#~ "のカレンダーアプリ等に登録できる `ics` ファイル"
+#~ msgstr ""
+#~ "Register Hololive stream schedule ([Holodule](https://schedule.hololive."
+#~ "tv/))  to any calendar apps that supports `ics` format!"
+
+#, no-wrap
+#~ msgid ""
+#~ "| カテゴリ           | URL                                                                     |\n"
+#~ "|:------------------:|-------------------------------------------------------------------------|\n"
+#~ "| 全体               | <https://gemmaro.github.io/holodule-ics/holodule-english.ics>           |\n"
+#~ "| ホロライブ         | <https://gemmaro.github.io/holodule-ics/holodule-hololive.ics>          |\n"
+#~ "| ホロスターズ       | <https://gemmaro.github.io/holodule-ics/holodule-holostars.ics>         |\n"
+#~ "| hololive Indonesia | <https://gemmaro.github.io/holodule-ics/holodule-indonesia.ics>         |\n"
+#~ "| hololive English   | <https://gemmaro.github.io/holodule-ics/holodule-english.ics>           |\n"
+#~ "| HOLOSTARS English  | <https://gemmaro.github.io/holodule-ics/holodule-holostars_english.ics> |\n"
+#~ "| hololive DEV\\_IS   | <https://gemmaro.github.io/holodule-ics/holodule-dev_is.ics>            |\n"
+#~ msgstr ""
+#~ "| カテゴリ           | URL                                                                     |\n"
+#~ "|:------------------:|-------------------------------------------------------------------------|\n"
+#~ "| All               | <https://gemmaro.github.io/holodule-ics/holodule-english.ics>           |\n"
+#~ "| hololive         | <https://gemmaro.github.io/holodule-ics/holodule-hololive.ics>          |\n"
+#~ "| HOLOSTARS       | <https://gemmaro.github.io/holodule-ics/holodule-holostars.ics>         |\n"
+#~ "| hololive Indonesia | <https://gemmaro.github.io/holodule-ics/holodule-indonesia.ics>         |\n"
+#~ "| hololive English   | <https://gemmaro.github.io/holodule-ics/holodule-english.ics>           |\n"
+#~ "| HOLOSTARS English  | <https://gemmaro.github.io/holodule-ics/holodule-holostars_english.ics> |\n"
+#~ "| hololive DEV\\_IS   | <https://gemmaro.github.io/holodule-ics/holodule-dev_is.ics>            |\n"
+
+#~ msgid "`設定` を開く"
+#~ msgstr "Open `Settings`"
+
+#~ msgid ""
+#~ "ホロジュールと同じく、15分に1度更新されます。 ただし、ホロジュールの更新時"
+#~ "間が不明なため、最大で15分の遅延が発生します。"
+#~ msgstr ""
+#~ "Every 15 minutes, as same as Holodule does.  Update may be delayed up to "
+#~ "15 minutes since we don't know when the Holodule updates."
+
+#~ msgid ""
+#~ "iOS では設定より更新頻度を設定できるので概ねまともに参照できますが、 "
+#~ "Google Calendar は更新頻度が低すぎて厳しいと思います。"
+#~ msgstr ""
+#~ "You can config the update frequency manually for iOS, but... RIP Google "
+#~ "Calendar."
+
+#~ msgid ""
+#~ "ホロジュールでは配信開始予定時間しか得られないため、配信の長さは全て **2時"
+#~ "間** に固定しています。"
+#~ msgstr ""
+#~ "Since we cannot get the stream length from Holodule or YouTube API, the "
+#~ "length is fixed to **2 hours**."
+
+#~ msgid "[Twitter](https://twitter.com/A1ces)"
+#~ msgstr "[Twitter](https://twitter.com/A1ces)"

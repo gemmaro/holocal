@@ -1,66 +1,84 @@
-# Holodule-ICS
+# Holodule iCalendar
 
-[[日本語]](https://github.com/sarisia/holodule-ics/blob/master/README.md) [English]
+[\[日本語\]](README.md) [English]
 
-Register Hololive stream schedule ([Holodule](https://schedule.hololive.tv/))
-to any calendar apps that supports `ics` format!
+Holodule iCalendar is a program that generates and distributes iCalendar
+files (with the extension `.ics`) from
+[Holodule](https://schedule.hololive.tv/) (the streaming schedule for
+Hololive).  This file format can be registered with many calendar
+applications.
 
 ![holodule](https://user-images.githubusercontent.com/33576079/76172492-00a80e80-61da-11ea-9590-a6bcc4a4982d.png)
 
-# URLs
+## URLs
 
-| Category | URL |
-| :-: | - |
-| All | https://sarisia.cc/holodule-ics/holodule-all.ics |
-| Hololive | https://sarisia.cc/holodule-ics/holodule-hololive.ics |
-| Holostars | https://sarisia.cc/holodule-ics/holodule-holostars.ics |
-| Indonesia | https://sarisia.cc/holodule-ics/holodule-indonesia.ics |
-| English | https://sarisia.cc/holodule-ics/holodule-english.ics |
-| HOLOSTARS English | https://sarisia.cc/holodule-ics/holodule-holostars_english.ics |
-| DEV_IS | https://sarisia.cc/holodule-ics/holodule-dev_is.ics |
+* [All](https://gemmaro.github.io/holodule-ics/holodule-all.ics)
+* [hololive](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)
+* [HOLOSTARS](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)
+* [hololive
+  Indonesia](https://gemmaro.github.io/holodule-ics/holodule-indonesia.ics)
+* [hololive
+  English](https://gemmaro.github.io/holodule-ics/holodule-english.ics)
+* [HOLOSTARS
+  English](https://gemmaro.github.io/holodule-ics/holodule-holostars_english.ics)
+* [hololive
+  DEV\_IS](https://gemmaro.github.io/holodule-ics/holodule-dev_is.ics)
 
-# Configure
+## Configuration
 
-## iOS (iPhone/iPad)
+NOTE: The configuration may vary depending on the OS version.
 
-- Open `Settings` in home screen
-- `Password & Accounts` -> `Add Account`
-- `Other` at the bottom
-- `Add Subscribed Calendar` at the bottom
-- Paste the URL then tap `Next`
-- Tap `save`, just as is
+### iOS (iPhone/iPad)
 
-## Google Calendar (PC)
+* Go to the home screen and open the "Settings" app.
+* "Password & Accounts" -> "Add Account"
+* "Other" at the bottom
+* "Add Subscribed Calendar" at the bottom
+* Paste the URL then tap "Next"
+* Tap "save"
 
-- Open `Settings`
-- `Add calendar` -> `From URL` at the left side
-- Paste the URL
-- `Add calendar`
+### Google Calendar (PC)
 
-Once you added the calendar, you can see the calendar from Google Calendar Mobile app too.
+* Open "Settings"
+* "Add calendar" -> "From URL" at the left side
+* Paste the URL
+* "Add calendar"
 
-# Caverts
+Once added from your PC, it can also be viewed in the mobile version of
+Google Calendar.
 
-## Calendar update frequency
+## Caverts
 
-Every 15 minutes, as same as Holodule does.
-Update may be delayed up to 15 minutes since we don't know when the Holodule updates.
+### Calendar update frequency
 
-The actual update frequency may vary depends on the calendar app you use.
+The update frequency is set to once per hour (it seems Holodule itself
+updates every 15 minutes).
 
-You can config the update frequency manually for iOS, but... RIP Google Calendar.
+The frequency at which the calendar app updates might affect how quickly
+changes appear in your calendar.  In iOS, you can adjust the update
+frequency in the settings.
 
-## I want notifications
+### I want notifications
 
-Yes, you can, but it's far better using the push notifications with YouTube app.
+Some calendars allow you to set notifications.  Please also consider using
+YouTube's notification feature.
 
-## Stream length
+### Stream length
 
-Since we cannot get the stream length from Holodule or YouTube API, the length is
-fixed to **2 hours**.
+The duration of all streams is fixed at **2 hours**.  This is because only
+the scheduled start times of the streams are available from Holodule.
 
-# Bugs? Feature requests?
+## Bugs? Feature requests?
 
-- [GitHub Discussions](https://github.com/sarisia/holodule-ics/discussions)
-- [GitHub Issues](https://github.com/sarisia/holodule-ics/issues)
-- [Twitter](https://twitter.com/A1ces)
+* [Feature requests](https://github.com/gemmaro/holodule-ics/discussions)
+* [Report problems](https://github.com/gemmaro/holodule-ics/issues)
+
+## Acknowledgements
+
+This program is based on
+[sarisia/holodule-ics](https://github.com/sarisia/holodule-ics).
+
+## License
+
+This program is distributed under the MIT License.  For more details, please
+refer to the [LICENSE file](LICENSE).
