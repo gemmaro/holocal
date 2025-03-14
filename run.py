@@ -1,11 +1,11 @@
 import asyncio
 import logging
-from os import getenv
 import sys
+from os import getenv
 
 from dotenv import load_dotenv
 
-from holodule import Holodule
+import holodule.holodule
 
 load_dotenv()
 logging.basicConfig(
@@ -31,5 +31,5 @@ if __name__ == "__main__":
         log.critical("no youtube_key is given")
         sys.exit(1)
 
-    h = Holodule(holodule_page, youtube_key, save_dir)
+    h = holodule.holodule.Holodule(holodule_page, youtube_key, save_dir)
     sys.exit(asyncio.run(h.run()))

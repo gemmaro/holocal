@@ -10,7 +10,6 @@ readme = "README.md"
 python = "^3.10"
 aiohttp = "^3.7.4.post0"
 ics = "^0.7.2"
-lxml = "^4.6.3"
 python-dotenv = "^0.15.0"
 
 

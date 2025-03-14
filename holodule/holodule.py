@@ -1,10 +1,10 @@
 import asyncio
+import os
 from logging import getLogger
 from math import ceil
 from typing import Dict, Optional, Sequence, Set, Tuple
 
 from aiohttp import ClientSession, ClientTimeout
-from lxml.html import document_fromstring
 
 from holodule.errors import HTTPStatusError
 from holodule.schedule import Schedule
@@ -58,11 +58,7 @@ class Holodule:
 
         schedules: Dict[str, Schedule] = {}
         for t, p in pages_html.items():
-            index = document_fromstring(p)
-            elem = index.xpath(f'//*[@id="all"]')
-            if elem:
-                log.info(f"Found target: {t}")
-                schedules[t] = Schedule(t, elem[0])
+            schedules[t] = Schedule.parse(t, p)
 
         # currently 'all' has all video ids so fetch this
         video_ids = schedules["all"].video_ids
