@@ -80,5 +80,9 @@ This program is based on
 
 ## License
 
+This program will be developed and operated in accordance with the [Hololive
+Production - Derivative Works Guidelines](https://hololivepro.com/en/terms/
+"hololive").
+
 This program is distributed under the MIT License.  For more details, please
 refer to the [LICENSE file](LICENSE).

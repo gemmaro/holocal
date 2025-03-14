@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Holodule\n"
-"POT-Creation-Date: 2025-03-13 20:59+0900\n"
-"PO-Revision-Date: 2025-03-13 21:02+0900\n"
+"POT-Creation-Date: 2025-03-14 15:28+0900\n"
+"PO-Revision-Date: 2025-03-14 15:30+0900\n"
 "Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -62,41 +62,51 @@ msgstr "[All](https://gemmaro.github.io/holodule-ics/holodule-all.ics)"
 #: ../README.md:20
 msgid ""
 "[ホロライブ](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)"
-msgstr "[hololive](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)"
+msgstr ""
+"[hololive](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)"
 
 #. type: Bullet: '* '
 #: ../README.md:20
 msgid ""
 "[ホロスターズ](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)"
-msgstr "[HOLOSTARS](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)"
+msgstr ""
+"[HOLOSTARS](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)"
 
 #. type: Bullet: '* '
 #: ../README.md:20
 msgid ""
 "[hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-"
 "indonesia.ics)"
-msgstr "[hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-indonesia.ics)"
+msgstr ""
+"[hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-"
+"indonesia.ics)"
 
 #. type: Bullet: '* '
 #: ../README.md:20
 msgid ""
 "[hololive English](https://gemmaro.github.io/holodule-ics/holodule-english."
 "ics)"
-msgstr "[hololive English](https://gemmaro.github.io/holodule-ics/holodule-english.ics)"
+msgstr ""
+"[hololive English](https://gemmaro.github.io/holodule-ics/holodule-english."
+"ics)"
 
 #. type: Bullet: '* '
 #: ../README.md:20
 msgid ""
 "[HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-"
 "holostars_english.ics)"
-msgstr "[HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-holostars_english.ics)"
+msgstr ""
+"[HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-"
+"holostars_english.ics)"
 
 #. type: Bullet: '* '
 #: ../README.md:20
 msgid ""
 "[hololive DEV\\_IS](https://gemmaro.github.io/holodule-ics/holodule-dev_is."
 "ics)"
-msgstr "[hololive DEV\\_IS](https://gemmaro.github.io/holodule-ics/holodule-dev_is.ics)"
+msgstr ""
+"[hololive DEV\\_IS](https://gemmaro.github.io/holodule-ics/holodule-dev_is."
+"ics)"
 
 #. type: Title ##
 #: ../README.md:21
@@ -192,8 +202,10 @@ msgstr "Calendar update frequency"
 
 #. type: Plain text
 #: ../README.md:48
-msgid "1時間に1回としています（ホロジュールは15分に1度のようです。）。"
-msgstr "The update frequency is set to once per hour (it seems Holodule itself updates every 15 minutes)."
+msgid "1時間に1回としています（ホロジュールは15分に1度のようです）。"
+msgstr ""
+"The update frequency is set to once per hour (it seems Holodule itself "
+"updates every 15 minutes)."
 
 #. type: Plain text
 #: ../README.md:51
@@ -231,7 +243,9 @@ msgstr "Stream length"
 msgid ""
 "配信の長さは全て **2時間** に固定しています。 ホロジュールでは、配信開始の予"
 "定時間のみが得られるためです。"
-msgstr "The duration of all streams is fixed at **2 hours**.  This is because only the scheduled start times of the streams are available from Holodule."
+msgstr ""
+"The duration of all streams is fixed at **2 hours**.  This is because only "
+"the scheduled start times of the streams are available from Holodule."
 
 #. type: Title ##
 #: ../README.md:62
@@ -273,6 +287,16 @@ msgstr "License"
 
 #. type: Plain text
 #: ../README.md:74
+msgid ""
+"このプログラムの開発、運用は[ホロライブプロダクションの二次創作ガイドライン]"
+"(https://hololivepro.com/terms/ \"hololive\")に則って行います。"
+msgstr ""
+"This program will be developed and operated in accordance with the [Hololive\n"
+"Production - Derivative Works Guidelines](https://hololivepro.com/en/terms/\n"
+"\"hololive\")."
+
+#. type: Plain text
+#: ../README.md:76
 msgid ""
 "このプログラムはMITライセンスの元に配布されます。 詳細は[LICENSEファイル]"
 "(LICENSE)をご参照ください。"
