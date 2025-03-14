@@ -1,10 +1,10 @@
 import asyncio
-import os
 from logging import getLogger
 from math import ceil
 from typing import Dict, Optional, Sequence, Set, Tuple
 
-from aiohttp import ClientSession, ClientTimeout
+import aiohttp_client_cache
+from aiohttp import ClientTimeout
 
 from holodule.errors import HTTPStatusError
 from holodule.schedule import Schedule
@@ -37,9 +37,12 @@ class Holodule:
         # ClientSession.__aenter__ does nothing but ClientSession.__aexit__
         # closes this sessoin, so we have to do that.
         # https://github.com/aio-libs/aiohttp/blob/fe647a08d1acb53404b703b46b37409602ab18b4/aiohttp/client.py#L986
-        self.session = ClientSession(
-            timeout=ClientTimeout(total=30),
-            headers={"User-Agent": "sarisia/holodule-ics"},
+        self.session = aiohttp_client_cache.CachedSession(
+            cache=aiohttp_client_cache.SQLiteBackend("holodule"),
+            timeout=ClientTimeout(
+                total=30),
+            headers={
+                "User-Agent": "sarisia/holodule-ics"},
         )
 
         status = 0

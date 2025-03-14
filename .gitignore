@@ -6,3 +6,6 @@ __pycache__
 .env
 .python-version
 \!*
+
+# aiohttp client cache
+/holodule.sqlite
