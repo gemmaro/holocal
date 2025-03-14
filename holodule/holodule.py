@@ -42,7 +42,7 @@ class Holodule:
             timeout=ClientTimeout(
                 total=30),
             headers={
-                "User-Agent": "sarisia/holodule-ics"},
+                "User-Agent": "holodule-ics"},
         )
 
         status = 0
