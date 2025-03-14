@@ -20,7 +20,6 @@ poetry run python run.py
 
 ## Environment Variables
 
-- `HOLODULE_PAGE`: **Required.** Holodule page URL to get. Must be a `シンプル版` (e.g. [全体](https://schedule.hololive.tv/simple "hololive production")).
 - `HOLODULE_YOUTUBE_KEY`: **Required.** API key of YouTube Data API.
 - `HOLODULE_PAGE`: Holodule page URL to get.  Must be a `シンプル版` (e.g. [全
   体](https://schedule.hololive.tv/simple "hololive production")).
