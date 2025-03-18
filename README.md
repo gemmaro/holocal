@@ -1,7 +1,5 @@
 # Holodule iCalendar
 
-[日本語] [\[English\]](README-en.md)
-
 Holodule iCalendarは、[ホロジュール](https://schedule.hololive.tv/)（ホロライ
 ブの配信予定）からiCalendarファイル（拡張子は`.ics`）を生成配信するプログラム
 です。このファイル形式は、多くのカレンダーアプリ等に登録できます。

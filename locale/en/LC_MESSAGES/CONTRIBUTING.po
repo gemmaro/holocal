@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, gemmaro
+# This file is distributed under the same license as the Holodule iCalendar
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Holodule iCalendar \n"
+"Report-Msgid-Bugs-To: https://github.com/gemmaro/holodule-ics/issues\n"
+"POT-Creation-Date: 2025-03-19 12:25+0900\n"
+"PO-Revision-Date: 2025-03-19 12:30+0900\n"
+"Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+"Language: en"
+
+#: ../../CONTRIBUTING.md:1
+msgid "開発の手引き"
+msgstr "Developer's Guide"
+
+#: ../../CONTRIBUTING.md:3
+msgid "ローカルで実行"
+msgstr "Running Locally"
+
+#: ../../CONTRIBUTING.md:5
+msgid "プロジェクトルートに`.env`ファイルを置き、環境変数を設定してください。 その後、以下を実行します。"
+msgstr "Place `.env` with environment variables to project root, then run:"
+
+#: ../../CONTRIBUTING.md:13
+msgid "環境変数"
+msgstr "Environment Variables"
+
+#: ../../CONTRIBUTING.md:15
+msgid "`HOLODULE_YOUTUBE_KEY`: **必須**です。YouTube Data APIのAPIキーです。"
+msgstr "`HOLODULE_YOUTUBE_KEY`: **Required.** API key of YouTube Data API."
+
+#: ../../CONTRIBUTING.md:16
+msgid ""
+"`HOLODULE_PAGE`: "
+"取得するホロジュールのページのURLです。「シンプル版」でなければなりません（例：[全体](https://schedule.hololive.tv/simple"
+" \"hololive production\")）。"
+msgstr "`HOLODULE_PAGE`: Holodule page URL to get.  Must be a \"シンプル版\" (e.g. [全体](https://schedule.hololive.tv/simple \"hololive production\"))."
+
+#: ../../CONTRIBUTING.md:17
+msgid "`HOLODULE_DIR`: 結果の`ics`ファイルを置くディレクトリです。既定は`public`です。"
+msgstr "`HOLODULE_DIR`: Directory to place result `.ics` files.  Default to `public`."
+
+#: ../../CONTRIBUTING.md:18
+msgid "`HOLODULE_LOGLEVEL`: `logging`モジュールのログ水準です。既定で`INFO`です。"
+msgstr "`HOLODULE_LOGLEVEL`: Loglevel of `logging` module. Default to `INFO`."
+
+#: ../../CONTRIBUTING.md:20
+msgid "TODO"
+msgstr "TODO"
+
+#: ../../CONTRIBUTING.md:22
+msgid "型検査"
+msgstr "Type checking"
+
+#: ../../CONTRIBUTING.md:23
+msgid "ドキュメント"
+msgstr "Documentation"
+
+#: ../../CONTRIBUTING.md:24
+msgid "テスト"
+msgstr "Test"
+
+#: ../../CONTRIBUTING.md:26
+msgid "参考資料"
+msgstr "References"
+
+#: ../../CONTRIBUTING.md:28
+msgid ""
+"[ワークフローにスクリプトを追加する](https://docs.github.com/ja/actions/writing-workflows"
+"/choosing-what-your-workflow-does/adding-scripts-to-your-workflow "
+"\"GitHub\")"
+msgstr "[Adding scripts to your workflow](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/adding-scripts-to-your-workflow \"GitHub\")"
+
+#: ../../CONTRIBUTING.md:30
+msgid ""
+"[GitHub Actions　のワークフロー構文](https://docs.github.com/ja/actions/writing-"
+"workflows/workflow-syntax-for-github-actions \"GitHub\")"
+msgstr "[Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions \"GitHub\")"
+
+#: ../../CONTRIBUTING.md:32
+msgid ""
+"[pipx - On Linux](https://github.com/pypa/pipx?tab=readme-ov-file#on-"
+"linux \"GitHub\")"
+msgstr "[pipx - On Linux](https://github.com/pypa/pipx?tab=readme-ov-file#on-linux \"GitHub\")"
+
+#: ../../CONTRIBUTING.md:34
+msgid ""
+"[Python のビルドとテスト](https://docs.github.com/ja/actions/use-cases-and-"
+"examples/building-and-testing/building-and-testing-python \"GitHub\")"
+msgstr "[Building and testing Python](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python \"GitHub\")"
+
+#: ../../CONTRIBUTING.md:36
+msgid ""
+"[deploy-pages](https://github.com/actions/deploy-pages \"GitHub\") and "
+"[Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-"
+"github-pages-site \"GitHub\")."
+msgstr "[deploy-pages](https://github.com/actions/deploy-pages \"GitHub\") and [Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-github-pages-site \"GitHub\")."
+
+#: ../../CONTRIBUTING.md:38
+msgid ""
+"[upload-pages-artifact](https://github.com/actions/upload-pages-artifact "
+"\"GitHub\")"
+msgstr "[upload-pages-artifact](https://github.com/actions/upload-pages-artifact \"GitHub\")"
+
+#~ msgid "Developing guide"
+#~ msgstr ""
+
+#~ msgid "Run locally"
+#~ msgstr ""
+
+#~ msgid "Place `.env` with environment variables to project root, then run:"
+#~ msgstr ""
+
+#~ msgid "Environment Variables"
+#~ msgstr ""
+
+#~ msgid "`HOLODULE_YOUTUBE_KEY`: **Required.** API key of YouTube Data API."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`HOLODULE_PAGE`: Holodule page URL to "
+#~ "get.  Must be a `シンプル版` (e.g. [全"
+#~ " 体](https://schedule.hololive.tv/simple \"hololive "
+#~ "production\"))."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`HOLODULE_DIR`: Directory to place result "
+#~ "`.ics` files.  Default to `public`."
+#~ msgstr ""
+
+#~ msgid "`HOLODULE_LOGLEVEL`: Loglevel of `logging` module. Default to `INFO`."
+#~ msgstr ""
+
+#~ msgid "Type checking"
+#~ msgstr ""
+
+#~ msgid "Documentation"
+#~ msgstr ""
+
+#~ msgid "Tests"
+#~ msgstr ""
+
+#~ msgid "References"
+#~ msgstr ""
+

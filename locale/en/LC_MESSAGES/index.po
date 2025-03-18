@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, gemmaro
+# This file is distributed under the same license as the Holodule iCalendar
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Holodule iCalendar \n"
+"Report-Msgid-Bugs-To: https://github.com/gemmaro/holodule-ics/issues\n"
+"POT-Creation-Date: 2025-03-19 13:18+0900\n"
+"PO-Revision-Date: 2025-03-19 13:19+0900\n"
+"Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
+"Language: en\n"
+"Language-Team: none\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../index.rst:6
+msgid "目次："
+msgstr "Contents:"
+
+#: ../../index.rst:2
+msgid "Holodule iCalendar"
+msgstr "Holodule iCalendar"
+
+#: ../../index.rst:4
+msgid "翻訳： `English <en/index.html>`_"
+msgstr "Translations: `Japanese <../index.html>`_"
+
+#: ../../index.rst:15
+msgid "索引と図表"
+msgstr "Indices and Tables:"
+
+#: ../../index.rst:17
+msgid ":ref:`genindex`"
+msgstr ":ref:`genindex`"
+
+#: ../../index.rst:18
+msgid ":ref:`search`"
+msgstr ":ref:`search`"
+
+#~ msgid "Contents:"
+#~ msgstr "Contents:"
+
+#~ msgid "Welcome to Holodule iCalendar's documentation!"
+#~ msgstr ""
+
+#~ msgid "Indices and tables"
+#~ msgstr ""
+
+#~ msgid "使用許諾"
+#~ msgstr "License"
+
+#~ msgid ":ref:`modindex`"
+#~ msgstr ":ref:`modindex`"
+

@@ -94,5 +94,8 @@ outputs a memoizing PEG/Packrat parser in Python.")
  (list (specifications->manifest (list "python@3.10" ;https://docs.python.org/ja/3.10/
                                        "python-aiohttp"
                                        "python-dotenv"
-                                       "poetry"))
+                                       "poetry"
+                                       "python-sphinx"
+                                       "python-myst-parser"
+                                       "python-sphinx-intl"))
        (packages->manifest (list python-ics python-aiohttp-client-cache))))

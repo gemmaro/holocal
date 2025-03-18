@@ -9,3 +9,7 @@ __pycache__
 
 # aiohttp client cache
 /holodule.sqlite
+
+# Sphinx
+/build/
+/locale/*/LC_MESSAGES/*.mo

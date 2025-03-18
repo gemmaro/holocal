@@ -38,6 +38,9 @@ jobs:
         env:
           HOLODULE_YOUTUBE_KEY: ${{ secrets.HOLODULE_YOUTUBE_KEY }}
 
+      - name: generate documentation
+        run: poetry run make docs
+
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3

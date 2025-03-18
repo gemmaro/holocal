@@ -1,29 +1,29 @@
-# Developing guide
+# 開発の手引き
 
-## Run locally
+## ローカルで実行
 
-Place `.env` with environment variables to project root, then run:
+プロジェクトルートに`.env`ファイルを置き、環境変数を設定してください。
+その後、以下を実行します。
 
 ```sh
 poetry install
 poetry run python run.py
 ```
 
-## Environment Variables
+## 環境変数
 
-- `HOLODULE_YOUTUBE_KEY`: **Required.** API key of YouTube Data API.
-- `HOLODULE_PAGE`: Holodule page URL to get.  Must be a `シンプル版` (e.g. [全
-  体](https://schedule.hololive.tv/simple "hololive production")).
-- `HOLODULE_DIR`: Directory to place result `.ics` files.  Default to `public`.
-- `HOLODULE_LOGLEVEL`: Loglevel of `logging` module. Default to `INFO`.
+- `HOLODULE_YOUTUBE_KEY`: **必須**です。YouTube Data APIのAPIキーです。
+- `HOLODULE_PAGE`: 取得するホロジュールのページのURLです。「シンプル版」でなければなりません（例：[全体](https://schedule.hololive.tv/simple "hololive production")）。
+- `HOLODULE_DIR`: 結果の`ics`ファイルを置くディレクトリです。既定は`public`です。
+- `HOLODULE_LOGLEVEL`: `logging`モジュールのログ水準です。既定で`INFO`です。
 
 ## TODO
 
-* Type checking
-* Documentation
-* Tests
+* 型検査
+* ドキュメント
+* テスト
 
-## References
+## 参考資料
 
 [ワークフローにスクリプトを追加する](https://docs.github.com/ja/actions/writing-workflows/choosing-what-your-workflow-does/adding-scripts-to-your-workflow "GitHub")
 

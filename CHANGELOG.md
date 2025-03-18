@@ -1,6 +1,5 @@
-# Change log for Holodule iCalendar
+# 変更履歴
 
 ## 0.2.0
 
-Other than the URL providing the iCalendar file, there are likely no changes
-visible to the users.
+iCalendarファイルを提供するURL以外は、利用者の目に触れる変更はなさそうです。
