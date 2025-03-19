@@ -40,6 +40,8 @@ jobs:
 
       - name: generate documentation
         run: poetry run make docs
+        env:
+          CI: yes # Skip updating gettext files, which somehow causes errors
 
       - name: Upload static files as artifact
         id: deployment

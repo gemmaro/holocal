@@ -12,7 +12,7 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile intl docs
+.PHONY: help Makefile intl docs intl-dev
 
 docs:
 	${MAKE} html
@@ -21,9 +21,12 @@ docs:
 	rsync -av build/html/ public/en/
 
 intl:
+	[ "${CI}" = yes ] || ${MAKE} intl-dev
+	${MAKE} -e SPHINXOPTS="-D language='en'" html
+
+intl-dev:
 	${MAKE} gettext
 	sphinx-intl update -p build/gettext
-	${MAKE} -e SPHINXOPTS="-D language='en'" html
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
