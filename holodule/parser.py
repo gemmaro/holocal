@@ -1,15 +1,19 @@
+import datetime
 import enum
 import html.parser
+import logging
 import re
 import unicodedata
 
 YOUTUBE_URL = r"https://www[.]youtube[.]com/watch[?]v=(?P<id>[A-Za-z0-9_-]+)"
 TWITCH_URL = r"https://www[.]twitch[.]tv/[a-z_]+"
 SPACES_WITH_NEWLINES = r"[ \r]*\n[ \n\r]*"
+DATE = r"(?P<month>\d\d)/(?P<day>\d\d)"
+TIME = r"(?P<hour>\d\d):(?P<minute>\d\d)"
+
+log = logging.getLogger(__name__)
 
 
-# Extract dates to retrieve complete datetime?  Currently only time
-# (hour:minute) can be extracted.
 class Parser(html.parser.HTMLParser):
     def __init__(self):
         super().__init__()
@@ -30,6 +34,10 @@ class Parser(html.parser.HTMLParser):
                     self.current_hyperlink = dict(attrs)["href"]
                     self._state = State.ANCHOR
 
+                if tag == "div" and \
+                   dict(attrs).get("class") == "holodule navbar-text":
+                    self._state = State.DATE
+
             case State.ANCHOR:
                 self._tags.append(tag)
 
@@ -42,6 +50,15 @@ class Parser(html.parser.HTMLParser):
     def handle_data(self, data):
         if self._state == State.ANCHOR:
             self.current_text += data
+
+        elif self._state == State.DATE:
+            match data.split():
+                case [date, _]:
+                    match = re.match(DATE, date)
+                    if not match:
+                        raise Error(repr(date))
+
+                    self._date = Date(int(match["month"]), int(match["day"]))
 
     def handle_endtag(self, tag):
         match self._state:
@@ -68,6 +85,12 @@ class Parser(html.parser.HTMLParser):
                     self._reset_current_link()
                     self._state = State.INSIDE
 
+            case State.DATE:
+                if self._tags.pop() != tag:
+                    raise Error()
+
+                self._state = State.INSIDE
+
             case _:
                 raise Error()
 
@@ -92,21 +115,38 @@ class Parser(html.parser.HTMLParser):
                 raise Error(f"text: {repr(words)}")
 
     def _validate_time(self, time):
-        if not re.match(r"\d\d:\d\d", time):
-            raise Error()
+        match = re.match(TIME, time)
+        if not match:
+            raise Error(repr(time))
+
+        year = int(match["hour"])
+        minute = int(match["minute"])
+        time = Time(year, minute)
+        self._time = time
 
     def _append_link(self, url, talent):
+        year = datetime.datetime.now().year
+        tzone = datetime.timezone(datetime.timedelta(hours=9))
+        time = datetime.datetime(year,
+                                 self._date.month,
+                                 self._date.day,
+                                 self._time.hour,
+                                 self._time.minute,
+                                 tzinfo=tzone)
+        time = time.astimezone(datetime.timezone(datetime.timedelta(hours=9)))
         self.events.append(Event(site=Site.parse_url(url),
-                                 talent=talent))
+                                 talent=talent,
+                                 datetime=time))
 
 
 class Event:
-    def __init__(self, site, talent):
+    def __init__(self, site, talent, datetime):
         self.site = site
         self.talent = talent
+        self.datetime = datetime
 
     def __repr__(self):
-        return f"<{self.site}\t{self.talent}>"
+        return f"<{self.site}\t{self.talent}\t{self.datetime}>"
 
 
 class Talent:
@@ -160,6 +200,18 @@ class Site:
         return f"<{self.type} {self.id or self.url}>"
 
 
+class Date:
+    def __init__(self, month, day):
+        self.month = month
+        self.day = day
+
+
+class Time:
+    def __init__(self, hour, minute):
+        self.hour = hour
+        self.minute = minute
+
+
 class Error(Exception):
     pass
 
@@ -169,3 +221,4 @@ class State(enum.Enum):
     INSIDE = "inside of anchors"
     ANCHOR = "reading anchor text"
     REST = "rest, after anchors"
+    DATE = "date"

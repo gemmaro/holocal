@@ -3,17 +3,20 @@ from logging import getLogger
 
 from ics import Event
 
+import holodule.parser
+
 log = getLogger(__name__)
 
 
 class LiveEvent():
-    def __init__(self, name: str, url: str, video_id=None) -> None:
+    def __init__(self, name: str, url: str, datetime, site,
+                 video_id=None) -> None:
         self.name = name
         self.url = url
+        self.begin = datetime
         self.video_id = video_id
-
+        self.site = site
         self.title = None
-        self.begin = None
 
     @property
     def ical_event(self) -> Event:
@@ -39,8 +42,14 @@ class LiveEvent():
                 pass
 
             case _:
-                log.error(f"unexpected meta: {repr(meta)}")
-                return False
+                match self.site.type:
+                    case holodule.parser.Type.Twitch \
+                       | holodule.parser.Type.Abema:
+                        self.title = self.site.type.name
+                        return
+
+                    case _:
+                        raise Error(self.site)
 
         if not title or not time:
             log.error(f"missing value: {repr(meta)}")
@@ -48,4 +57,9 @@ class LiveEvent():
 
         self.title = title
         self.begin = datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
+
         return True
+
+
+class Error(Exception):
+    pass

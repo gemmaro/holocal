@@ -17,8 +17,11 @@ class Schedule():
         parser.feed(html_source)
         events = []
         for event in parser.events:
-            events.append(LiveEvent(event.talent,
-                                    event.site.url, event.site.id))
+            events.append(LiveEvent(name=event.talent,
+                                    url=event.site.url,
+                                    datetime=event.datetime,
+                                    site=event.site,
+                                    video_id=event.site.id))
 
         return Schedule(name, events)
 
@@ -41,10 +44,8 @@ class Schedule():
         return cal
 
     def assign_youtube(self, yt_meta: dict) -> None:
-        # is there any case that stream is registered to Holodule but not to
-        # YouTube?  if so, we need to include these events.
-        self.events = [e for e in self.events if e.assign(
-            yt_meta.get(e.video_id))]
+        for event in self.events:
+            event.assign(yt_meta.get(event.video_id))
 
     def dump(self, save_dir: str) -> None:
         path = Path(save_dir)
