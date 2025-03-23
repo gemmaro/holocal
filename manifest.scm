@@ -97,5 +97,6 @@ outputs a memoizing PEG/Packrat parser in Python.")
                                        "poetry"
                                        "python-sphinx"
                                        "python-myst-parser"
-                                       "python-sphinx-intl"))
+                                       "python-sphinx-intl"
+                                       "python-mypy"))
        (packages->manifest (list python-ics python-aiohttp-client-cache))))
