@@ -5,6 +5,8 @@ import logging
 import re
 import unicodedata
 
+import ics
+
 YOUTUBE_URL = r"https://www[.]youtube[.]com/watch[?]v=(?P<id>[A-Za-z0-9_-]+)"
 TWITCH_URL = r"https://www[.]twitch[.]tv/[a-z_]+"
 SPACES_WITH_NEWLINES = r"[ \r]*\n[ \n\r]*"
@@ -139,16 +141,6 @@ class Parser(html.parser.HTMLParser):
                                  datetime=time))
 
 
-class Event:
-    def __init__(self, site, talent, datetime):
-        self.site = site
-        self.talent = talent
-        self.datetime = datetime
-
-    def __repr__(self):
-        return f"<{self.site}\t{self.talent}\t{self.datetime}>"
-
-
 class Talent:
     def __init__(self, name, mark=None):
         # "So" means "Other Symbol" (emoji)
@@ -168,6 +160,53 @@ class Talent:
 
         else:
             return f"<{self.name}>"
+
+
+class Event:
+    def __init__(self, site, talent: Talent, datetime):
+        self.site = site
+        self.talent = talent
+        self.datetime = datetime
+
+    def ical_event(self) -> ics.Event:
+        return ics.Event(
+            name=f"{self.talent.name}: {self.title}",
+            begin=self.datetime,
+            duration={"hours": 2},
+            description=f"{self.title}\n{self.site.url}",
+            # use video_id as uid will make order of events static
+            # (because uid is used in Event.__hash__)
+            uid=self.site.id  # TODO: コラボで同じ動画が複数ホロジュールに登録される可能性？
+        )
+
+    def assign(self, meta: dict) -> bool:
+        match meta:
+            # "publishedAt" is for video case.
+            # TODO: is this correct?
+            case {"snippet": {"title": title},
+                  "liveStreamingDetails": {"scheduledStartTime": time}} \
+               | {"snippet": {"title": title},
+                  "liveStreamingDetails": {"actualStartTime": time}} \
+               | {"snippet": {"title": title, "publishedAt": time}}:
+                pass
+
+            case _:
+                match self.site.type:
+                    case Type.Twitch | Type.Abema:
+                        self.title = self.site.type.name
+                        return
+
+                    case _:
+                        raise Error(self.site)
+
+        if not title or not time:
+            raise Error(f"missing value: {repr(meta)}")
+
+        self.title = title
+        self.begin = datetime.datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
+
+    def __repr__(self):
+        return f"<{self.site}\t{self.talent}\t{self.datetime}>"
 
 
 class Type(enum.Enum):
