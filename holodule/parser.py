@@ -4,6 +4,7 @@ import re
 import unicodedata
 
 YOUTUBE_URL = r"https://www[.]youtube[.]com/watch[?]v=(?P<id>[A-Za-z0-9_-]+)"
+TWITCH_URL = r"https://www[.]twitch[.]tv/[a-z_]+"
 SPACES_WITH_NEWLINES = r"[ \r]*\n[ \n\r]*"
 
 
@@ -132,18 +133,23 @@ class Talent:
 class Type(enum.Enum):
     YouTube = "YouTube"
     Abema = "Abema"
+    Twitch = "Twitch"
 
 
 class Site:
     def parse_url(url):
         match = re.search(YOUTUBE_URL, url)
-        if not match:
-            if url != 'https://abema.app/hfAA':
-                raise Error(f"unmatch: {repr(url)}")
+        if match:
+            return Site(url, id=match["id"])
 
+        elif url == 'https://abema.app/hfAA':
             return Site(url, type=Type.Abema)
 
-        return Site(url, id=match["id"])
+        elif re.match(TWITCH_URL, url):
+            return Site(url, type=Type.Twitch)
+
+        else:
+            raise Error(f"unmatch: {repr(url)}")
 
     def __init__(self, url, type=Type.YouTube, id=None):
         self.url = url
