@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Holodule iCalendar \n"
 "Report-Msgid-Bugs-To: https://github.com/gemmaro/holodule-ics/issues\n"
-"POT-Creation-Date: 2025-03-19 13:57+0900\n"
-"PO-Revision-Date: 2025-03-19 13:59+0900\n"
+"POT-Creation-Date: 2025-03-23 17:41+0900\n"
+"PO-Revision-Date: 2025-03-23 17:42+0900\n"
 "Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
 "Language: en\n"
 "Language-Team: none\n"
@@ -189,8 +189,10 @@ msgid ""
 "カレンダー側で通知を設定できるものがあります。 "
 "[ホロプラス](https://www.holoplus.com/)、YouTubeチャンネルの通知機能等もご検討ください。"
 msgstr ""
-"Some calendars allow you to set notifications.  Please also consider using\n"
-"[holoplus](https://www.holoplus.com/en/) and YouTube's notification feature."
+"Some calendars allow you to set notifications.  Please also consider "
+"using\n"
+"[holoplus](https://www.holoplus.com/en/) and YouTube's notification "
+"feature."
 
 #: ../../README.md:55
 msgid "配信の長さについて"
@@ -204,22 +206,32 @@ msgstr ""
 "the scheduled start times of the streams are available from Holodule."
 
 #: ../../README.md:60
+msgid "配信のサイト"
+msgstr "Site of Streaming"
+
+#: ../../README.md:62
+msgid "YouTube以外の配信予定はカレンダーファイルに生成されないことがあります。 例えばTwitchやAbemaが該当します。"
+msgstr ""
+"Streaming schedules other than YouTube may not be generated in the calendar files.\n"
+"For example, this applies to Twitch and Abema."
+
+#: ../../README.md:65
 msgid "バグ・要望"
 msgstr "Bugs? Feature requests?"
 
-#: ../../README.md:62
+#: ../../README.md:67
 msgid "[機能の要望など](https://github.com/gemmaro/holodule-ics/discussions)"
 msgstr "[Feature requests](https://github.com/gemmaro/holodule-ics/discussions)"
 
-#: ../../README.md:63
+#: ../../README.md:68
 msgid "[不具合の報告など](https://github.com/gemmaro/holodule-ics/issues)"
 msgstr "[Report problems](https://github.com/gemmaro/holodule-ics/issues)"
 
-#: ../../README.md:65
+#: ../../README.md:70
 msgid "謝辞"
 msgstr "Acknowledgements"
 
-#: ../../README.md:67
+#: ../../README.md:72
 msgid ""
 "このプログラムは[sarisia/holodule-ics](https://github.com/sarisia/holodule-"
 "ics)を元にしています。"
@@ -227,11 +239,11 @@ msgstr ""
 "This program is based on\n"
 "[sarisia/holodule-ics](https://github.com/sarisia/holodule-ics)."
 
-#: ../../README.md:69
+#: ../../README.md:74
 msgid "使用許諾"
 msgstr "License"
 
-#: ../../README.md:71
+#: ../../README.md:76
 msgid ""
 "このプログラムの開発、運用は[ホロライブプロダクションの二次創作ガイドライン](https://hololivepro.com/terms/ "
 "\"hololive\")に則って行います。"
@@ -242,7 +254,7 @@ msgstr ""
 "Guidelines](https://hololivepro.com/en/terms/\n"
 "\"hololive\")."
 
-#: ../../README.md:73
+#: ../../README.md:78
 msgid "このプログラムはMITライセンスの元に配布されます。 詳細は[LICENSEファイル](LICENSE)をご参照ください。"
 msgstr ""
 "This program is distributed under the MIT License.  For more details, "
