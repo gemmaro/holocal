@@ -46,14 +46,8 @@ class Holodule:
         )
 
         status = 0
-        try:
-            await self.do_run()
-        except:
-            log.error("Failed: ", exc_info=True)
-            status = 1
-        finally:
-            await self.session.close()
-
+        await self.do_run()
+        await self.session.close()
         return status
 
     async def do_run(self) -> None:
@@ -70,26 +64,20 @@ class Holodule:
         for s in schedules.values():
             s.assign_youtube(self.videos)
             log.info(f"Dump {s.name}...")
-            try:
-                s.dump(self.save_dir)
-            except:
-                log.error(f"Failed to dump {s.name}: ", exc_info=True)
+            s.dump(self.save_dir)
 
         log.info("Done!")
 
     async def get_page(self, target: str = "") -> Optional[Tuple[str, str]]:
         log.info(f"({target}) getting page...")
-        try:
-            async with self.session.get(f"{self.page_url}/{target}") as resp:
-                text = await resp.text()
-                if resp.status != 200:
-                    log.error(
-                        f"({target}) failed to get: {resp.status} {text}'")
-                    return
+        async with self.session.get(f"{self.page_url}/{target}") as resp:
+            text = await resp.text()
+            if resp.status != 200:
+                log.error(
+                    f"({target}) failed to get: {resp.status} {text}'")
+                return
 
-                return target, text
-        except:
-            log.error("unhandled: ", exc_info=True)
+            return target, text
 
     async def get_pages(self, targets: Sequence[str]) -> Dict[str, str]:
         pages: Dict[str, str] = {}  # target: content
