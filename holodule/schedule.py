@@ -27,7 +27,7 @@ class Schedule():
     @property
     def ical_calendar(self) -> Calendar:
         cal = Calendar(
-            events=[e.ical_event() for e in self.events],
+            events=[e.ical_event() for e in self.events if e.show],
             creator="holodule-ical")
         cal.extra.append(ContentLine(
             "X-WR-CALNAME", value=f"Holodule - {self.name}"))

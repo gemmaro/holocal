@@ -167,6 +167,7 @@ class Event:
         self.site = site
         self.talent = talent
         self.datetime = datetime
+        self.show = True
 
     def ical_event(self) -> ics.Event:
         return ics.Event(
@@ -190,14 +191,18 @@ class Event:
                | {"snippet": {"title": title, "publishedAt": time}}:
                 pass
 
-            case _:
+            case None:
                 match self.site.type:
                     case Type.Twitch | Type.Abema:
                         self.title = self.site.type.name
                         return
 
-                    case _:
-                        raise Error(self.site)
+                    case Type.YouTube:
+                        log.warn("Possibly private video?  "
+                                 "Empty metadata.  "
+                                 f"{repr(self)}")
+                        self.show = False
+                        return
 
         if not title or not time:
             raise Error(f"missing value: {repr(meta)}")
