@@ -168,27 +168,41 @@ class Event:
         self.talent = talent
         self.datetime = datetime
         self.show = True
+        self.end = None
 
     def ical_event(self) -> ics.Event:
+        kwargs = {}
+        if self.end:
+            kwargs["end"] = self.end
+
+        else:
+            kwargs["duration"] = {"hours": 2}
+
         return ics.Event(
             name=f"{self.talent.name}: {self.title}",
             begin=self.datetime,
-            duration={"hours": 2},
             description=f"{self.title}\n{self.site.url}",
             # use video_id as uid will make order of events static
             # (because uid is used in Event.__hash__)
-            uid=self.site.id  # TODO: コラボで同じ動画が複数ホロジュールに登録される可能性？
+            uid=self.site.id,  # TODO: コラボで同じ動画が複数ホロジュールに登録される可能性？
+            **kwargs,
         )
 
     def assign(self, meta: dict) -> bool:
+        end_time = None
+
         match meta:
             # "publishedAt" is for video case.
             # TODO: is this correct?
             case {"snippet": {"title": title},
+                  "liveStreamingDetails": {"actualStartTime": time,
+                                           "actualEndTime": end_time}}:
+                pass
+
+            case {"snippet": {"title": title},
                   "liveStreamingDetails": {"scheduledStartTime": time}} \
-               | {"snippet": {"title": title},
-                  "liveStreamingDetails": {"actualStartTime": time}} \
-               | {"snippet": {"title": title, "publishedAt": time}}:
+                    | {"snippet": {"title": title, "publishedAt": time}}:
+                log.debug(repr(meta))
                 pass
 
             case None:
@@ -209,6 +223,10 @@ class Event:
 
         self.title = title
         self.begin = datetime.datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
+
+        if end_time:
+            self.end = datetime.datetime.strptime(end_time,
+                                                  "%Y-%m-%dT%H:%M:%SZ")
 
     def __repr__(self):
         return f"<{self.site}\t{self.talent}\t{self.datetime}>"
