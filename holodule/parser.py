@@ -41,7 +41,8 @@ class Parser(html.parser.HTMLParser):
                     self._state = State.DATE
 
             case State.ANCHOR:
-                self._tags.append(tag)
+                if tag != "img":
+                    self._tags.append(tag)
 
             case State.REST:
                 pass
@@ -78,9 +79,8 @@ class Parser(html.parser.HTMLParser):
 
             case State.ANCHOR:
                 while (top := self._tags.pop()) != tag:
-                    if top != "img":
-                        raise Error(f"{tag} and {top} when {self._state} "
-                                    f"({repr(self._tags)})")
+                    raise Error(f"{tag} and {top} when {self._state} "
+                                f"({repr(self._tags)})")
 
                 if tag == "a":
                     self._parse_anchor_text()
