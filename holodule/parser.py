@@ -77,20 +77,13 @@ class Parser(html.parser.HTMLParser):
                 if tag != top:
                     raise Error()
 
-            case State.ANCHOR:
-                while (top := self._tags.pop()) != tag:
-                    raise Error(f"{tag} and {top} when {self._state} "
-                                f"({repr(self._tags)})")
-
+            case State.ANCHOR if self._tags.pop() == tag:
                 if tag == "a":
                     self._parse_anchor_text()
                     self._reset_current_link()
                     self._state = State.INSIDE
 
-            case State.DATE:
-                if self._tags.pop() != tag:
-                    raise Error()
-
+            case State.DATE if self._tags.pop() == tag:
                 self._state = State.INSIDE
 
             case _:
