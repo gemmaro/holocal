@@ -25,65 +25,64 @@ class Parser(html.parser.HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         match self._state:
-            case State.OUTSIDE:
-                if dict(attrs).get("id") == "all":
-                    self._state = State.INSIDE
+            case State.OUTSIDE if dict(attrs).get("id") == "all":
+                self._state = State.INSIDE
+
+            case State.INSIDE if tag == "a":
+                self._tags.append(tag)
+                self.current_hyperlink = dict(attrs)["href"]
+                self._state = State.ANCHOR
+
+            case State.INSIDE if tag == "div" \
+                    and dict(attrs).get("class") == "holodule navbar-text":
+                self._tags.append(tag)
+                self._state = State.DATE
 
             case State.INSIDE:
                 self._tags.append(tag)
-                if tag == "a":
-                    self.current_hyperlink = dict(attrs)["href"]
-                    self._state = State.ANCHOR
 
-                if tag == "div" and \
-                   dict(attrs).get("class") == "holodule navbar-text":
-                    self._state = State.DATE
+            case State.ANCHOR if tag != "img":
+                self._tags.append(tag)
 
-            case State.ANCHOR:
-                if tag != "img":
-                    self._tags.append(tag)
-
-            case State.REST:
+            case State.OUTSIDE | State.ANCHOR | State.REST:
                 pass
 
             case _:
                 raise HoloduleException()
 
     def handle_data(self, data):
-        if self._state == State.ANCHOR:
-            self.current_text += data
+        match self._state:
+            case State.ANCHOR:
+                self.current_text += data
 
-        elif self._state == State.DATE:
-            match data.split():
-                case [date, _]:
-                    match = re.match(DATE, date)
-                    if not match:
-                        raise HoloduleException(repr(date))
+            case State.DATE:
+                match data.split():
+                    case [date, _]:
+                        match = re.match(DATE, date)
+                        if not match:
+                            raise HoloduleException(repr(date))
 
-                    self._date = Date(int(match["month"]), int(match["day"]))
+                        self._date = Date(int(match["month"]),
+                                          int(match["day"]))
 
     def handle_endtag(self, tag):
         match self._state:
-            case State.OUTSIDE | State.REST:
+            case State.INSIDE if not self._tags:
+                self._state = State.REST
+
+            case State.INSIDE if tag == self._tags.pop():
                 pass
 
-            case State.INSIDE:
-                if not self._tags:
-                    self._state = State.REST
-                    return
-
-                top = self._tags.pop()
-                if tag != top:
-                    raise HoloduleException()
-
-            case State.ANCHOR if self._tags.pop() == tag:
-                if tag == "a":
-                    self._parse_anchor_text()
-                    self._reset_current_link()
-                    self._state = State.INSIDE
+            case State.ANCHOR if self._tags.pop() == tag and tag == "a":
+                self._parse_anchor_text()
+                self._reset_current_link()
+                self._state = State.INSIDE
 
             case State.DATE if self._tags.pop() == tag:
                 self._state = State.INSIDE
+
+            case State.ANCHOR | State.OUTSIDE | State.REST:
+                pass
 
             case _:
                 raise HoloduleException()
