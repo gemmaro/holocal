@@ -3,9 +3,9 @@ import enum
 import html.parser
 import logging
 import re
-import unicodedata
 
-import ics
+from holodule.errors import HoloduleException
+from holodule.event import Event, Talent, Type
 
 YOUTUBE_URL = r"https://www[.]youtube[.]com/watch[?]v=(?P<id>[A-Za-z0-9_-]+)"
 TWITCH_URL = r"https://www[.]twitch[.]tv/[a-z_]+"
@@ -48,7 +48,7 @@ class Parser(html.parser.HTMLParser):
                 pass
 
             case _:
-                raise Error()
+                raise HoloduleException()
 
     def handle_data(self, data):
         if self._state == State.ANCHOR:
@@ -59,7 +59,7 @@ class Parser(html.parser.HTMLParser):
                 case [date, _]:
                     match = re.match(DATE, date)
                     if not match:
-                        raise Error(repr(date))
+                        raise HoloduleException(repr(date))
 
                     self._date = Date(int(match["month"]), int(match["day"]))
 
@@ -75,7 +75,7 @@ class Parser(html.parser.HTMLParser):
 
                 top = self._tags.pop()
                 if tag != top:
-                    raise Error()
+                    raise HoloduleException()
 
             case State.ANCHOR if self._tags.pop() == tag:
                 if tag == "a":
@@ -87,7 +87,7 @@ class Parser(html.parser.HTMLParser):
                 self._state = State.INSIDE
 
             case _:
-                raise Error()
+                raise HoloduleException()
 
     def _reset_current_link(self):
         self.current_hyperlink = None
@@ -107,12 +107,12 @@ class Parser(html.parser.HTMLParser):
                                   talent=Talent(talent, mark))
 
             case _:
-                raise Error(f"text: {repr(words)}")
+                raise HoloduleException(f"text: {repr(words)}")
 
     def _validate_time(self, time):
         match = re.match(TIME, time)
         if not match:
-            raise Error(repr(time))
+            raise HoloduleException(repr(time))
 
         year = int(match["hour"])
         minute = int(match["minute"])
@@ -134,103 +134,6 @@ class Parser(html.parser.HTMLParser):
                                  datetime=time))
 
 
-class Talent:
-    def __init__(self, name, mark=None):
-        # "So" means "Other Symbol" (emoji)
-        if mark and any(unicodedata.category(char) != "So" for char in mark):
-            raise Error()
-
-        self.name = name
-        self.mark = mark
-
-    def __str__(self):
-        mark = self.mark or ""
-        return f"{mark}{self.name}"
-
-    def __repr__(self):
-        if self.mark:
-            return f"<{self.name} {self.mark}>"
-
-        else:
-            return f"<{self.name}>"
-
-
-class Event:
-    def __init__(self, site, talent: Talent, datetime):
-        self.site = site
-        self.talent = talent
-        self.datetime = datetime
-        self.show = True
-        self.end = None
-
-    def ical_event(self) -> ics.Event:
-        kwargs = {}
-        if self.end:
-            kwargs["end"] = self.end
-
-        else:
-            kwargs["duration"] = {"hours": 2}
-
-        return ics.Event(
-            name=f"{self.talent.name}: {self.title}",
-            begin=self.datetime,
-            description=f"{self.title}\n{self.site.url}",
-            # use video_id as uid will make order of events static
-            # (because uid is used in Event.__hash__)
-            uid=self.site.id,  # TODO: コラボで同じ動画が複数ホロジュールに登録される可能性？
-            **kwargs,
-        )
-
-    def assign(self, meta: dict) -> bool:
-        end_time = None
-
-        match meta:
-            # "publishedAt" is for video case.
-            # TODO: is this correct?
-            case {"snippet": {"title": title},
-                  "liveStreamingDetails": {"actualStartTime": time,
-                                           "actualEndTime": end_time}}:
-                pass
-
-            case {"snippet": {"title": title},
-                  "liveStreamingDetails": {"scheduledStartTime": time}} \
-                    | {"snippet": {"title": title, "publishedAt": time}}:
-                log.debug(repr(meta))
-                pass
-
-            case None:
-                match self.site.type:
-                    case Type.Twitch | Type.Abema:
-                        self.title = self.site.type.name
-                        return
-
-                    case Type.YouTube:
-                        log.warn("Possibly private video?  "
-                                 "Empty metadata.  "
-                                 f"{repr(self)}")
-                        self.show = False
-                        return
-
-        if not title or not time:
-            raise Error(f"missing value: {repr(meta)}")
-
-        self.title = title
-        self.begin = datetime.datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
-
-        if end_time:
-            self.end = datetime.datetime.strptime(end_time,
-                                                  "%Y-%m-%dT%H:%M:%SZ")
-
-    def __repr__(self):
-        return f"<{self.site}\t{self.talent}\t{self.datetime}>"
-
-
-class Type(enum.Enum):
-    YouTube = "YouTube"
-    Abema = "Abema"
-    Twitch = "Twitch"
-
-
 class Site:
     def parse_url(url):
         match = re.search(YOUTUBE_URL, url)
@@ -244,7 +147,7 @@ class Site:
             return Site(url, type=Type.Twitch)
 
         else:
-            raise Error(f"unmatch: {repr(url)}")
+            raise HoloduleException(f"unmatch: {repr(url)}")
 
     def __init__(self, url, type=Type.YouTube, id=None):
         self.url = url
@@ -265,10 +168,6 @@ class Time:
     def __init__(self, hour, minute):
         self.hour = hour
         self.minute = minute
-
-
-class Error(Exception):
-    pass
 
 
 class State(enum.Enum):
