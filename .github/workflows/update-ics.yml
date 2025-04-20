@@ -17,21 +17,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      # These actions are from
+      # <https://github.com/orgs/python-poetry/discussions/10039>.
+      - name: Bootstrap Poetry
+        uses: python-poetry/poetry/.github/actions/bootstrap-poetry@main
         with:
           python-version: '3.13'
-
-      - name: install pipx
-        run: |
-          sudo apt-get update
-          sudo apt-get install pipx
-          pipx ensurepath
-
-      - name: install Poetry
-        run: pipx install poetry==2.1.1
-
-      - name: install dependencies
-        run: poetry install
+      - name: Install Project
+        uses: python-poetry/poetry/.github/actions/poetry-install@main
 
       - name: generate calendar files
         run: poetry run python run.py
