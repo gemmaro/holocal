@@ -99,4 +99,5 @@ outputs a memoizing PEG/Packrat parser in Python.")
                                        "python-myst-parser"
                                        "python-sphinx-intl"
                                        "python-mypy"))
-       (packages->manifest (list python-ics python-aiohttp-client-cache))))
+       (packages->manifest (list python-ics python-aiohttp-client-cache
+                                 python-isodate))))

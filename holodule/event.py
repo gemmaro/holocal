@@ -4,6 +4,7 @@ import logging
 import unicodedata
 
 import ics
+import isodate
 
 from holodule.errors import HoloduleException
 
@@ -17,19 +18,29 @@ class Event:
         self.datetime = datetime
         self.show = True
         self.end = None
+        self.estimated_end_time = False
 
     def ical_event(self) -> ics.Event:
         kwargs = {}
         if self.end:
             kwargs["end"] = self.end
 
+        elif self.duration:
+            kwargs["duration"] = self.duration
+
         else:
             kwargs["duration"] = {"hours": 2}
+            self.estimated_end_time = True
+
+        description = f"{self.title}\n{self.site.url}"
+        if self.estimated_end_time:
+            description += "\n\n※終了時刻は推定です。\n" \
+                "Note: The end time is an estimate."
 
         return ics.Event(
             name=f"{self.talent.name}: {self.title}",
             begin=self.datetime,
-            description=f"{self.title}\n{self.site.url}",
+            description=description,
             # use video_id as uid will make order of events static
             # (because uid is used in Event.__hash__)
             uid=self.site.id,  # TODO: コラボで同じ動画が複数ホロジュールに登録される可能性？
@@ -40,18 +51,25 @@ class Event:
         end_time = None
 
         match meta:
-            # "publishedAt" is for video case.
-            # TODO: is this correct?
             case {"snippet": {"title": title},
                   "liveStreamingDetails": {"actualStartTime": time,
                                            "actualEndTime": end_time}}:
-                pass
+                self.begin = self._parse_datetime(time)
+                self.end = self._parse_datetime(end_time)
 
             case {"snippet": {"title": title},
-                  "liveStreamingDetails": {"scheduledStartTime": time}} \
-                    | {"snippet": {"title": title, "publishedAt": time}}:
-                log.debug(repr(meta))
-                pass
+                  "liveStreamingDetails": {"scheduledStartTime": time}}:
+                self.begin = self._parse_datetime(time)
+                self.end = max(self.begin, datetime.datetime.now()) \
+                    + datetime.timedelta(hours=2)
+                self.estimated_end_time = True
+
+            # "publishedAt" is for video case.
+            # TODO: is this correct?
+            case {"snippet": {"title": title, "publishedAt": time},
+                  "contentDetails": {"duration": duration}}:
+                self.begin = self._parse_datetime(time)
+                self.duration = isodate.parse_duration(duration)
 
             case None:
                 match self.site.type:
@@ -70,11 +88,9 @@ class Event:
             raise HoloduleException(f"missing value: {repr(meta)}")
 
         self.title = title
-        self.begin = datetime.datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
 
-        if end_time:
-            self.end = datetime.datetime.strptime(end_time,
-                                                  "%Y-%m-%dT%H:%M:%SZ")
+    def _parse_datetime(self, source):
+        return datetime.datetime.strptime(source, "%Y-%m-%dT%H:%M:%SZ")
 
     def __repr__(self):
         return f"<{self.site}\t{self.talent}\t{self.datetime}>"

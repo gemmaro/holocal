@@ -111,7 +111,7 @@ class Holodule:
             YOUTUBE_API,
             params={
                 "key": self.yt_key,
-                "part": "id,snippet,liveStreamingDetails",
+                "part": "id,snippet,liveStreamingDetails,contentDetails",
                 "id": ",".join(video_ids),
             },
         ) as resp:
