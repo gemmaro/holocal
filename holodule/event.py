@@ -19,6 +19,7 @@ class Event:
         self.show = True
         self.end = None
         self.estimated_end_time = False
+        self.duration = None
 
     def ical_event(self) -> ics.Event:
         kwargs = {}
