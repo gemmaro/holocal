@@ -13,3 +13,6 @@ __pycache__
 # Sphinx
 /build/
 /locale/*/LC_MESSAGES/*.mo
+
+# Python
+.venv/
