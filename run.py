@@ -32,5 +32,5 @@ if __name__ == "__main__":
         sys.exit(1)
 
     h = holodule.Holodule(holodule_page,
-                                   youtube_key, save_dir)
+                          youtube_key, save_dir)
     sys.exit(asyncio.run(h.run()))
