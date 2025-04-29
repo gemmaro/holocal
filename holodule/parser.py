@@ -1,3 +1,4 @@
+import csv
 import datetime
 import enum
 import html.parser
@@ -13,6 +14,12 @@ DATE = r"(?P<month>\d\d)/(?P<day>\d\d)"
 TIME = r"(?P<hour>\d\d):(?P<minute>\d\d)"
 
 log = logging.getLogger(__name__)
+
+marks = {}
+with open("marks.csv", newline="") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        marks[row["talent"]] = row["mark"]
 
 
 class Parser(html.parser.HTMLParser):
@@ -94,6 +101,17 @@ class Parser(html.parser.HTMLParser):
     def _parse_anchor_text(self):
         match re.split(SPACES_WITH_NEWLINES, self.current_text):
             case ['', time, talent, '']:
+                mark = marks.get(talent)
+
+                if mark:
+                    log.debug(f"registered mark: {mark}")
+                    self._validate_time(time)
+                    self._append_link(url=self.current_hyperlink,
+                                      talent=Talent(talent, mark))
+                    return
+
+                log.warn(f"no mark found for {talent}")
+
                 self._validate_time(time)
                 self._append_link(url=self.current_hyperlink,
                                   talent=Talent(talent))

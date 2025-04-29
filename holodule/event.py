@@ -1,7 +1,6 @@
 import datetime
 import enum
 import logging
-import unicodedata
 
 import ics
 import isodate
@@ -39,7 +38,7 @@ class Event:
                 "Note: The end time is an estimate."
 
         return ics.Event(
-            name=f"{self.talent.name}: {self.title}",
+            name=f"{self.talent}: {self.title}",
             begin=self.datetime,
             description=description,
             # use video_id as uid will make order of events static
@@ -100,14 +99,11 @@ class Event:
 
 class Talent:
     def __init__(self, name, mark=None):
-        # "So" means "Other Symbol" (emoji)
-        if mark and any(unicodedata.category(char) != "So" for char in mark):
-            raise HoloduleException()
-
         self.name = name
         self.mark = mark
 
     def __str__(self):
+        """This is used in event name (summary)."""
         mark = self.mark or ""
         return f"{mark}{self.name}"
 
