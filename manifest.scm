@@ -14,28 +14,6 @@
              (gnu packages check)
              (gnu packages python-build))
 
-(define-public python-tatsu
-  (package
-    (name "python-tatsu")
-    (version "5.13.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (pypi-uri "tatsu" version))
-       (sha256
-        (base32 "04n0dgmfi89iyg2bvw9x7npvbr51zldlyqh8nfszk6nhxip2336z"))))
-    (build-system pyproject-build-system)
-    (arguments
-     (list
-      #:tests? #f)) ;TODO: enable
-    (native-inputs (list python-setuptools python-wheel))
-    (home-page "https://tatsu.readthedocs.io/en/stable/")
-    (synopsis "PEG/Packrat parser generator for Python")
-    (description
-     "@code{TatSu} takes a grammar in a variation of EBNF as input, and
-outputs a memoizing PEG/Packrat parser in Python.")
-    (license license:bsd-4)))
-
 (define-public python-ics
   (package
     (name "python-ics")
