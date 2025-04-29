@@ -45,6 +45,7 @@ class Event:
             # use video_id as uid will make order of events static
             # (because uid is used in Event.__hash__)
             uid=self.site.id,  # TODO: コラボで同じ動画が複数ホロジュールに登録される可能性？
+            url=self.site.url,
             **kwargs,
         )
 
