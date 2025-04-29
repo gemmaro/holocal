@@ -92,8 +92,7 @@ class Parser(html.parser.HTMLParser):
         self.current_text = ""
 
     def _parse_anchor_text(self):
-        words = re.split(SPACES_WITH_NEWLINES, self.current_text)
-        match words:
+        match re.split(SPACES_WITH_NEWLINES, self.current_text):
             case ['', time, talent, '']:
                 self._validate_time(time)
                 self._append_link(url=self.current_hyperlink,
@@ -105,7 +104,7 @@ class Parser(html.parser.HTMLParser):
                                   talent=Talent(talent, mark))
 
             case _:
-                raise HoloduleException(f"text: {repr(words)}")
+                raise HoloduleException(f"text: {repr(self.current_text)}")
 
     def _validate_time(self, time):
         match = re.match(TIME, time)
