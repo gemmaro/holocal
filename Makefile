@@ -12,7 +12,10 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile intl docs intl-dev
+.PHONY: help Makefile intl docs intl-dev run
+
+run:
+	poetry run python run.py
 
 docs:
 	${MAKE} html

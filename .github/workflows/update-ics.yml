@@ -27,7 +27,7 @@ jobs:
         uses: python-poetry/poetry/.github/actions/poetry-install@main
 
       - name: generate calendar files
-        run: poetry run python run.py
+        run: make run
         env:
           HOLODULE_YOUTUBE_KEY: ${{ secrets.HOLODULE_YOUTUBE_KEY }}
 
