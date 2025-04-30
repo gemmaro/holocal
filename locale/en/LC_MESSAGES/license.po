@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Holodule iCalendar \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-19 12:01+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-04-30 22:41+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,5 +20,5 @@ msgstr ""
 
 #: ../../license.rst:2
 msgid "License"
-msgstr ""
+msgstr "License"
 

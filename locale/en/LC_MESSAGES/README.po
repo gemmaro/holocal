@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Holodule iCalendar \n"
 "Report-Msgid-Bugs-To: https://github.com/gemmaro/holodule-ics/issues\n"
-"POT-Creation-Date: 2025-03-23 20:09+0900\n"
-"PO-Revision-Date: 2025-03-23 17:42+0900\n"
+"POT-Creation-Date: 2025-04-30 22:33+0900\n"
+"PO-Revision-Date: 2025-04-30 22:41+0900\n"
 "Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
 "Language: en\n"
 "Language-Team: none\n"
@@ -17,174 +17,150 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../README.md:1
-msgid "Holodule iCalendar"
-msgstr "Holodule iCalendar"
+#: ../../README.md:1 ../../README.md:6
+msgid "holocal"
+msgstr "holocal"
 
 #: ../../README.md:3
 msgid ""
-"Holodule iCalendarは、[ホロジュール](https://schedule.hololive.tv/)（ホロライ "
-"ブの配信予定）からiCalendarファイル（拡張子は`.ics`）を生成配信するプログラム "
-"です。このファイル形式は、多くのカレンダーアプリ等に登録できます。"
+"holocalは、[ホロジュール](https://schedule.hololive.tv/)（ホロライブの配信予定） "
+"からカレンダーアプリに登録できるファイルを生成、配信するプログラムです。"
 msgstr ""
-"Holodule iCalendar is a program that generates and distributes iCalendar\n"
-"files (with the extension `.ics`) from\n"
-"[Holodule](https://schedule.hololive.tv/) (the streaming schedule for\n"
-"Hololive).  This file format can be registered with many calendar\n"
-"applications."
+"Holocal is a program that generates and distributes files that can be\n"
+"registered in calendar apps based on [Holodule](https://schedule.hololive.tv/)\n"
+"(Hololive's streaming schedule)."
 
-#: ../../README.md:7
+#: ../../README.md:6
 msgid ""
-"![holodule](https://user-"
+"![holocal](https://user-"
 "images.githubusercontent.com/33576079/76172492-00a80e80-61da-"
 "11ea-9590-a6bcc4a4982d.png)"
-msgstr ""
-"![holodule](https://user-"
-"images.githubusercontent.com/33576079/76172492-00a80e80-61da-"
-"11ea-9590-a6bcc4a4982d.png)"
+msgstr "![holocal](https://user-images.githubusercontent.com/33576079/76172492-00a80e80-61da-11ea-9590-a6bcc4a4982d.png)"
 
-#: ../../README.md:7
-msgid "holodule"
-msgstr "holodule"
-
-#: ../../README.md:9
+#: ../../README.md:8
 msgid "URL一覧"
 msgstr "URLs"
 
+#: ../../README.md:10
+msgid "[全体](https://gemmaro.github.io/holocal/all.ics)"
+msgstr "[All](https://gemmaro.github.io/holocal/all.ics)"
+
 #: ../../README.md:11
-msgid "[全体](https://gemmaro.github.io/holodule-ics/holodule-all.ics)"
-msgstr "[All](https://gemmaro.github.io/holodule-ics/holodule-all.ics)"
+msgid "[ホロライブ](https://gemmaro.github.io/holocal/hololive.ics)"
+msgstr "[hololive](https://gemmaro.github.io/holocal/hololive.ics)"
 
 #: ../../README.md:12
-msgid "[ホロライブ](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)"
-msgstr "[hololive](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)"
+msgid "[ホロスターズ](https://gemmaro.github.io/holocal/holostars.ics)"
+msgstr "[HOLOSTARS](https://gemmaro.github.io/holocal/holostars.ics)"
 
 #: ../../README.md:13
-msgid "[ホロスターズ](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)"
-msgstr "[HOLOSTARS](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)"
+msgid "[hololive Indonesia](https://gemmaro.github.io/holocal/indonesia.ics)"
+msgstr "[hololive Indonesia](https://gemmaro.github.io/holocal/indonesia.ics)"
 
 #: ../../README.md:14
-msgid ""
-"[hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-"
-"indonesia.ics)"
-msgstr ""
-"[hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-"
-"indonesia.ics)"
+msgid "[hololive English](https://gemmaro.github.io/holocal/english.ics)"
+msgstr "[hololive English](https://gemmaro.github.io/holocal/english.ics)"
 
 #: ../../README.md:15
 msgid ""
-"[hololive English](https://gemmaro.github.io/holodule-ics/holodule-"
-"english.ics)"
-msgstr ""
-"[hololive English](https://gemmaro.github.io/holodule-ics/holodule-"
-"english.ics)"
+"[HOLOSTARS "
+"English](https://gemmaro.github.io/holocal/holostars_english.ics)"
+msgstr "[HOLOSTARS English](https://gemmaro.github.io/holocal/holostars_english.ics)"
 
 #: ../../README.md:16
-msgid ""
-"[HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-"
-"holostars_english.ics)"
-msgstr ""
-"[HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-"
-"holostars_english.ics)"
+msgid "[hololive DEV\\_IS](https://gemmaro.github.io/holocal/dev_is.ics)"
+msgstr "[hololive DEV\\_IS](https://gemmaro.github.io/holocal/dev_is.ics)"
 
-#: ../../README.md:17
-msgid ""
-"[hololive DEV\\_IS](https://gemmaro.github.io/holodule-ics/holodule-"
-"dev_is.ics)"
-msgstr ""
-"[hololive DEV\\_IS](https://gemmaro.github.io/holodule-ics/holodule-"
-"dev_is.ics)"
-
-#: ../../README.md:19
+#: ../../README.md:18
 msgid "設定例"
 msgstr "Configuration"
 
-#: ../../README.md:21
+#: ../../README.md:20
 msgid "※操作方法はOSのバージョンにより異なる可能性があります。"
 msgstr "NOTE: The configuration may vary depending on the OS version."
 
-#: ../../README.md:23
+#: ../../README.md:22
 msgid "iOS (iPhone/iPad)"
 msgstr "iOS (iPhone/iPad)"
 
-#: ../../README.md:25
+#: ../../README.md:24
 msgid "ホーム画面の「設定」を開く"
 msgstr "Go to the home screen and open the \"Settings\" app."
 
-#: ../../README.md:26
+#: ../../README.md:25
 msgid "「パスワードとアカウント」→「アカウントを追加」"
 msgstr "\"Password & Accounts\" -> \"Add Account\""
 
-#: ../../README.md:27
+#: ../../README.md:26
 msgid "一番下の「その他」"
 msgstr "\"Other\" at the bottom"
 
-#: ../../README.md:28
+#: ../../README.md:27
 msgid "一番下の「照会するカレンダーを追加」"
 msgstr "\"Add Subscribed Calendar\" at the bottom"
 
-#: ../../README.md:29
+#: ../../README.md:28
 msgid "URL を貼り付けて「次へ」"
 msgstr "Paste the URL then tap \"Next\""
 
-#: ../../README.md:30
+#: ../../README.md:29
 msgid "そのまま右上の「保存」"
 msgstr "Tap \"save\""
 
-#: ../../README.md:32
+#: ../../README.md:31
 msgid "Google Calendar (PC)"
 msgstr "Google Calendar (PC)"
 
-#: ../../README.md:34
+#: ../../README.md:33
 msgid "「設定」を開く"
 msgstr "Open \"Settings\""
 
-#: ../../README.md:35
+#: ../../README.md:34
 msgid "左側メニュー「カレンダーの追加」→「URL で追加」"
 msgstr "\"Add calendar\" -> \"From URL\" at the left side"
 
-#: ../../README.md:36
+#: ../../README.md:35
 msgid "URL を貼り付け"
 msgstr "Paste the URL"
 
-#: ../../README.md:37
+#: ../../README.md:36
 msgid "「カレンダーを追加」"
 msgstr "\"Add calendar\""
 
-#: ../../README.md:39
+#: ../../README.md:38
 msgid "PC から追加後はモバイル版 Google Calendar でも閲覧できます。"
 msgstr ""
 "Once added from your PC, it can also be viewed in the mobile version of\n"
 "Google Calendar."
 
-#: ../../README.md:41
+#: ../../README.md:40
 msgid "雑記"
 msgstr "Caverts"
 
-#: ../../README.md:43
+#: ../../README.md:42
 msgid "カレンダーの更新頻度"
 msgstr "Calendar update frequency"
 
-#: ../../README.md:45
+#: ../../README.md:44
 msgid "1時間に1回としています（ホロジュールは15分に1度のようです）。"
 msgstr ""
 "The update frequency is set to once per hour (it seems Holodule itself\n"
 "updates every 15 minutes)."
 
-#: ../../README.md:47
+#: ../../README.md:46
 msgid "カレンダーアプリの更新頻度により、カレンダーへの反映が遅くなる可能性があります。 iOS では、設定より更新頻度を設定できます。"
 msgstr ""
 "The frequency at which the calendar app updates might affect how quickly\n"
 "changes appear in your calendar.  In iOS, you can adjust the update\n"
 "frequency in the settings."
 
-#: ../../README.md:50
+#: ../../README.md:49
 msgid "通知が欲しい"
 msgstr "I want notifications"
 
-#: ../../README.md:52
+#: ../../README.md:51
 msgid ""
 "カレンダー側で通知を設定できるものがあります。 "
 "[ホロプラス](https://www.holoplus.com/)、YouTubeチャンネルの通知機能等もご検討ください。"
@@ -194,34 +170,31 @@ msgstr ""
 "[holoplus](https://www.holoplus.com/en/) and YouTube's notification "
 "feature."
 
-#: ../../README.md:55
+#: ../../README.md:54
 msgid "配信の長さについて"
 msgstr "Stream length"
 
-#: ../../README.md:57
-msgid "配信の長さは全て **2時間** に固定しています。 ホロジュールでは、配信開始の予定時間のみが得られるためです。"
-msgstr ""
-"The duration of all streams is fixed at **2 hours**.  This is because "
-"only\n"
-"the scheduled start times of the streams are available from Holodule."
+#: ../../README.md:56
+msgid "配信の長さがわからないときは、カレンダーの生成を開始した時刻から2時間後を推定します。 ホロジュールでは、配信開始の予定時間のみが得られるためです。"
+msgstr "When the duration of a stream is unknown, it is estimated to be two hours after the time the calendar generation begins.  This is because Holodule only provides the scheduled start time of the stream."
 
-#: ../../README.md:60
+#: ../../README.md:59
 msgid "バグ・要望"
 msgstr "Bugs? Feature requests?"
 
+#: ../../README.md:61
+msgid "[機能の要望など](https://github.com/gemmaro/holocal/discussions)"
+msgstr "[Feature requests](https://github.com/gemmaro/holocal/discussions)"
+
 #: ../../README.md:62
-msgid "[機能の要望など](https://github.com/gemmaro/holodule-ics/discussions)"
-msgstr "[Feature requests](https://github.com/gemmaro/holodule-ics/discussions)"
+msgid "[不具合の報告など](https://github.com/gemmaro/holocal/issues)"
+msgstr "[Report problems](https://github.com/gemmaro/holocal/issues)"
 
-#: ../../README.md:63
-msgid "[不具合の報告など](https://github.com/gemmaro/holodule-ics/issues)"
-msgstr "[Report problems](https://github.com/gemmaro/holodule-ics/issues)"
-
-#: ../../README.md:65
+#: ../../README.md:64
 msgid "謝辞"
 msgstr "Acknowledgements"
 
-#: ../../README.md:67
+#: ../../README.md:66
 msgid ""
 "このプログラムは[sarisia/holodule-ics](https://github.com/sarisia/holodule-"
 "ics)を元にしています。"
@@ -229,11 +202,11 @@ msgstr ""
 "This program is based on\n"
 "[sarisia/holodule-ics](https://github.com/sarisia/holodule-ics)."
 
-#: ../../README.md:69
+#: ../../README.md:68
 msgid "使用許諾"
 msgstr "License"
 
-#: ../../README.md:71
+#: ../../README.md:70
 msgid ""
 "このプログラムの開発、運用は[ホロライブプロダクションの二次創作ガイドライン](https://hololivepro.com/terms/ "
 "\"hololive\")に則って行います。"
@@ -244,7 +217,7 @@ msgstr ""
 "Guidelines](https://hololivepro.com/en/terms/\n"
 "\"hololive\")."
 
-#: ../../README.md:73
+#: ../../README.md:72
 msgid "このプログラムはMITライセンスの元に配布されます。 詳細は[LICENSEファイル](LICENSE)をご参照ください。"
 msgstr ""
 "This program is distributed under the MIT License.  For more details, "
@@ -263,4 +236,7 @@ msgstr ""
 #~ "may not be generated in the "
 #~ "calendar files.\n"
 #~ "For example, this applies to Twitch and Abema."
+
+#~ msgid "Holodule iCalendar"
+#~ msgstr "Holodule iCalendar"
 

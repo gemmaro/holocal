@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Holodule iCalendar \n"
 "Report-Msgid-Bugs-To: https://github.com/gemmaro/holodule-ics/issues\n"
-"POT-Creation-Date: 2025-03-19 12:25+0900\n"
-"PO-Revision-Date: 2025-03-19 12:30+0900\n"
+"POT-Creation-Date: 2025-04-30 22:33+0900\n"
+"PO-Revision-Date: 2025-04-30 22:38+0900\n"
 "Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
+"Language: en\n"
 "Language-Team: none\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
-"Language: en"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../CONTRIBUTING.md:1
 msgid "開発の手引き"
@@ -35,23 +36,23 @@ msgid "環境変数"
 msgstr "Environment Variables"
 
 #: ../../CONTRIBUTING.md:15
-msgid "`HOLODULE_YOUTUBE_KEY`: **必須**です。YouTube Data APIのAPIキーです。"
-msgstr "`HOLODULE_YOUTUBE_KEY`: **Required.** API key of YouTube Data API."
+msgid "`HOLOCAL_YOUTUBE_KEY`: **必須**です。YouTube Data APIのAPIキーです。"
+msgstr "`HOLOCAL_YOUTUBE_KEY`: **Required.** API key of YouTube Data API."
 
 #: ../../CONTRIBUTING.md:16
 msgid ""
-"`HOLODULE_PAGE`: "
+"`HOLOCAL_PAGE`: "
 "取得するホロジュールのページのURLです。「シンプル版」でなければなりません（例：[全体](https://schedule.hololive.tv/simple"
 " \"hololive production\")）。"
-msgstr "`HOLODULE_PAGE`: Holodule page URL to get.  Must be a \"シンプル版\" (e.g. [全体](https://schedule.hololive.tv/simple \"hololive production\"))."
+msgstr "`HOLOCAL_PAGE`: Holodule page URL to get.  Must be a \"シンプル版\" (e.g. [全体](https://schedule.hololive.tv/simple \"hololive production\"))."
 
 #: ../../CONTRIBUTING.md:17
-msgid "`HOLODULE_DIR`: 結果の`ics`ファイルを置くディレクトリです。既定は`public`です。"
-msgstr "`HOLODULE_DIR`: Directory to place result `.ics` files.  Default to `public`."
+msgid "`HOLOCAL_DIR`: 結果の`ics`ファイルを置くディレクトリです。既定は`public`です。"
+msgstr "`HOLOCAL_DIR`: Directory to place result `.ics` files.  Default to `public`."
 
 #: ../../CONTRIBUTING.md:18
-msgid "`HOLODULE_LOGLEVEL`: `logging`モジュールのログ水準です。既定で`INFO`です。"
-msgstr "`HOLODULE_LOGLEVEL`: Loglevel of `logging` module. Default to `INFO`."
+msgid "`HOLOCAL_LOGLEVEL`: `logging`モジュールのログ水準です。既定で`INFO`です。"
+msgstr "`HOLOCAL_LOGLEVEL`: Loglevel of `logging` module. Default to `INFO`."
 
 #: ../../CONTRIBUTING.md:20
 msgid "TODO"
@@ -78,38 +79,53 @@ msgid ""
 "[ワークフローにスクリプトを追加する](https://docs.github.com/ja/actions/writing-workflows"
 "/choosing-what-your-workflow-does/adding-scripts-to-your-workflow "
 "\"GitHub\")"
-msgstr "[Adding scripts to your workflow](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/adding-scripts-to-your-workflow \"GitHub\")"
+msgstr ""
+"[Adding scripts to your workflow](https://docs.github.com/en/actions"
+"/writing-workflows/choosing-what-your-workflow-does/adding-scripts-to-"
+"your-workflow \"GitHub\")"
 
 #: ../../CONTRIBUTING.md:30
 msgid ""
 "[GitHub Actions　のワークフロー構文](https://docs.github.com/ja/actions/writing-"
 "workflows/workflow-syntax-for-github-actions \"GitHub\")"
-msgstr "[Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions \"GitHub\")"
+msgstr ""
+"[Workflow syntax for GitHub Actions](https://docs.github.com/en/actions"
+"/writing-workflows/workflow-syntax-for-github-actions \"GitHub\")"
 
 #: ../../CONTRIBUTING.md:32
 msgid ""
 "[pipx - On Linux](https://github.com/pypa/pipx?tab=readme-ov-file#on-"
 "linux \"GitHub\")"
-msgstr "[pipx - On Linux](https://github.com/pypa/pipx?tab=readme-ov-file#on-linux \"GitHub\")"
+msgstr ""
+"[pipx - On Linux](https://github.com/pypa/pipx?tab=readme-ov-file#on-"
+"linux \"GitHub\")"
 
 #: ../../CONTRIBUTING.md:34
 msgid ""
 "[Python のビルドとテスト](https://docs.github.com/ja/actions/use-cases-and-"
 "examples/building-and-testing/building-and-testing-python \"GitHub\")"
-msgstr "[Building and testing Python](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python \"GitHub\")"
+msgstr ""
+"[Building and testing Python](https://docs.github.com/en/actions/use-"
+"cases-and-examples/building-and-testing/building-and-testing-python "
+"\"GitHub\")"
 
 #: ../../CONTRIBUTING.md:36
 msgid ""
 "[deploy-pages](https://github.com/actions/deploy-pages \"GitHub\") and "
 "[Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-"
 "github-pages-site \"GitHub\")."
-msgstr "[deploy-pages](https://github.com/actions/deploy-pages \"GitHub\") and [Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-github-pages-site \"GitHub\")."
+msgstr ""
+"[deploy-pages](https://github.com/actions/deploy-pages \"GitHub\") and "
+"[Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-"
+"github-pages-site \"GitHub\")."
 
 #: ../../CONTRIBUTING.md:38
 msgid ""
 "[upload-pages-artifact](https://github.com/actions/upload-pages-artifact "
 "\"GitHub\")"
-msgstr "[upload-pages-artifact](https://github.com/actions/upload-pages-artifact \"GitHub\")"
+msgstr ""
+"[upload-pages-artifact](https://github.com/actions/upload-pages-artifact "
+"\"GitHub\")"
 
 #~ msgid "Developing guide"
 #~ msgstr ""
