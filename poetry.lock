@@ -127,6 +127,7 @@ files = [
 
 [package.dependencies]
 aiohttp = ">=3.8,<4.0"
+aiosqlite = {version = ">=0.20", optional = true, markers = "extra == \"all\" or extra == \"filesystem\" or extra == \"sqlite\""}
 attrs = ">=21.2"
 itsdangerous = ">=2.0"
 url-normalize = ">=1.4,<2.0"
@@ -155,14 +156,21 @@ frozenlist = ">=1.1.0"
 
 [[package]]
 name = "aiosqlite"
-version = "0.18.0"
+version = "0.20.0"
 description = "asyncio bridge to the standard sqlite3 module"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "aiosqlite-0.18.0-py3-none-any.whl", hash = "sha256:c3511b841e3a2c5614900ba1d179f366826857586f78abd75e7cbeb88e75a557"},
-    {file = "aiosqlite-0.18.0.tar.gz", hash = "sha256:faa843ef5fb08bafe9a9b3859012d3d9d6f77ce3637899de20606b7fc39aa213"},
+    {file = "aiosqlite-0.20.0-py3-none-any.whl", hash = "sha256:36a1deaca0cac40ebe32aac9977a6e2bbc7f5189f23f4a54d5908986729e5bd6"},
+    {file = "aiosqlite-0.20.0.tar.gz", hash = "sha256:6d35c8c256637f4672f843c31021464090805bf925385ac39473fb16eaaca3d7"},
 ]
+
+[package.dependencies]
+typing_extensions = ">=4.0"
+
+[package.extras]
+dev = ["attribution (==1.7.0)", "black (==24.2.0)", "coverage[toml] (==7.4.1)", "flake8 (==7.0.0)", "flake8-bugbear (==24.2.6)", "flit (==3.9.0)", "mypy (==1.8.0)", "ufmt (==2.3.0)", "usort (==1.0.8.post1)"]
+docs = ["sphinx (==7.2.6)", "sphinx-mdinclude (==0.5.3)"]
 
 [[package]]
 name = "alabaster"
@@ -1092,13 +1100,13 @@ use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "setuptools"
-version = "80.0.0"
+version = "80.0.1"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "setuptools-80.0.0-py3-none-any.whl", hash = "sha256:a38f898dcd6e5380f4da4381a87ec90bd0a7eec23d204a5552e80ee3cab6bd27"},
-    {file = "setuptools-80.0.0.tar.gz", hash = "sha256:c40a5b3729d58dd749c0f08f1a07d134fb8a0a3d7f87dc33e7c5e1f762138650"},
+    {file = "setuptools-80.0.1-py3-none-any.whl", hash = "sha256:f4b49d457765b3aae7cbbeb1c71f6633a61b729408c2d1a837dae064cca82ef2"},
+    {file = "setuptools-80.0.1.tar.gz", hash = "sha256:20fe373a22ef9f3925512650d1db90b1b8de01cdb6df91ab1788263139cbf9a2"},
 ]
 
 [package.extras]
@@ -1469,4 +1477,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "ceddb4a5184219e8c2ee097ee6c15f00f6c226249beb3bbb3b85935531640500"
+content-hash = "c2275b95e1a1b8fa52bbcc63cdccd5e79fdc42da184142c0789758c115a2c36b"

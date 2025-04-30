@@ -13,8 +13,11 @@ python-dotenv = "^0.15.0"
 isodate = "^0.7.2"
 
 aiohttp = "^3.11"
-aiohttp-client-cache = "^0.12.4"
-aiosqlite = "^0.18.0" # SQLite backend for aiohttp-client-cache
+aiosqlite = "^0.20" # SQLite backend for aiohttp-client-cache
+
+[tool.poetry.dependencies.aiohttp-client-cache]
+version = "^0.12.4"
+extras = ["sqlite"]
 
 [tool.poetry.group.dev.dependencies]
 sphinx = "^6.2"
