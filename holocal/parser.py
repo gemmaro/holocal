@@ -5,9 +5,9 @@ import html.parser
 import logging
 import re
 
-from holodule.errors import HoloduleException
-from holodule.event import Event, Talent
-from holodule.site import Site
+from holocal.errors import HolocalException
+from holocal.event import Event, Talent
+from holocal.site import Site
 
 SPACES_WITH_NEWLINES = r"[ \r]*\n[ \n\r]*"
 DATE = r"(?P<month>\d\d)/(?P<day>\d\d)"
@@ -55,7 +55,7 @@ class Parser(html.parser.HTMLParser):
                 pass
 
             case _:
-                raise HoloduleException()
+                raise HolocalException()
 
     def handle_data(self, data):
         match self._state:
@@ -67,7 +67,7 @@ class Parser(html.parser.HTMLParser):
                     case [date, _]:
                         match = re.match(DATE, date)
                         if not match:
-                            raise HoloduleException(repr(date))
+                            raise HolocalException(repr(date))
 
                         self._date = Date(int(match["month"]),
                                           int(match["day"]))
@@ -92,7 +92,7 @@ class Parser(html.parser.HTMLParser):
                 pass
 
             case _:
-                raise HoloduleException()
+                raise HolocalException()
 
     def _reset_current_link(self):
         self.current_hyperlink = None
@@ -122,12 +122,12 @@ class Parser(html.parser.HTMLParser):
                                   talent=Talent(talent, mark))
 
             case _:
-                raise HoloduleException(f"text: {repr(self.current_text)}")
+                raise HolocalException(f"text: {repr(self.current_text)}")
 
     def _validate_time(self, time):
         match = re.match(TIME, time)
         if not match:
-            raise HoloduleException(repr(time))
+            raise HolocalException(repr(time))
 
         year = int(match["hour"])
         minute = int(match["minute"])

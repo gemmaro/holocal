@@ -6,8 +6,8 @@ from typing import Dict, Optional, Sequence, Set, Tuple
 import aiohttp_client_cache
 from aiohttp import ClientTimeout
 
-from holodule.errors import HTTPStatusError
-from holodule.schedule import Schedule
+from holocal.errors import HTTPStatusError
+from holocal.schedule import Schedule
 
 CHUNK_SIZE = 50
 YOUTUBE_API = "https://www.googleapis.com/youtube/v3/videos"
@@ -23,10 +23,10 @@ TARGET = [
 log = getLogger(__name__)
 
 
-class Holodule:
-    def __init__(self, holodule_page: str,
+class Holocal:
+    def __init__(self, page: str,
                  youtube_key: str, save_dir: str) -> None:
-        self.page_url = holodule_page
+        self.page_url = page
         self.yt_key = youtube_key
         self.save_dir = save_dir
 
@@ -38,11 +38,11 @@ class Holodule:
         # closes this sessoin, so we have to do that.
         # https://github.com/aio-libs/aiohttp/blob/fe647a08d1acb53404b703b46b37409602ab18b4/aiohttp/client.py#L986
         self.session = aiohttp_client_cache.CachedSession(
-            cache=aiohttp_client_cache.SQLiteBackend("holodule"),
+            cache=aiohttp_client_cache.SQLiteBackend("holocal"),
             timeout=ClientTimeout(
                 total=30),
             headers={
-                "User-Agent": "holodule-ics"},
+                "User-Agent": "holocal"},
         )
 
         status = 0

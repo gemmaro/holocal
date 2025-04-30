@@ -1,20 +1,19 @@
-# Holodule iCalendar
+# holocal
 
-Holodule iCalendarは、[ホロジュール](https://schedule.hololive.tv/)（ホロライ
-ブの配信予定）からiCalendarファイル（拡張子は`.ics`）を生成配信するプログラム
-です。このファイル形式は、多くのカレンダーアプリ等に登録できます。
+holocalは、[ホロジュール](https://schedule.hololive.tv/)（ホロライブの配信予定）
+からカレンダーアプリに登録できるファイルを生成、配信するプログラムです。
 
-![holodule](https://user-images.githubusercontent.com/33576079/76172492-00a80e80-61da-11ea-9590-a6bcc4a4982d.png)
+![holocal](https://user-images.githubusercontent.com/33576079/76172492-00a80e80-61da-11ea-9590-a6bcc4a4982d.png)
 
 ## URL一覧
 
-* [全体](https://gemmaro.github.io/holodule-ics/holodule-all.ics)
-* [ホロライブ](https://gemmaro.github.io/holodule-ics/holodule-hololive.ics)
-* [ホロスターズ](https://gemmaro.github.io/holodule-ics/holodule-holostars.ics)
-* [hololive Indonesia](https://gemmaro.github.io/holodule-ics/holodule-indonesia.ics)
-* [hololive English](https://gemmaro.github.io/holodule-ics/holodule-english.ics)
-* [HOLOSTARS English](https://gemmaro.github.io/holodule-ics/holodule-holostars_english.ics)
-* [hololive DEV\_IS](https://gemmaro.github.io/holodule-ics/holodule-dev_is.ics)
+* [全体](https://gemmaro.github.io/holocal/all.ics)
+* [ホロライブ](https://gemmaro.github.io/holocal/hololive.ics)
+* [ホロスターズ](https://gemmaro.github.io/holocal/holostars.ics)
+* [hololive Indonesia](https://gemmaro.github.io/holocal/indonesia.ics)
+* [hololive English](https://gemmaro.github.io/holocal/english.ics)
+* [HOLOSTARS English](https://gemmaro.github.io/holocal/holostars_english.ics)
+* [hololive DEV\_IS](https://gemmaro.github.io/holocal/dev_is.ics)
 
 ## 設定例
 
@@ -54,13 +53,13 @@ iOS では、設定より更新頻度を設定できます。
 
 ### 配信の長さについて
 
-配信の長さは全て **2時間** に固定しています。
+配信の長さがわからないときは、カレンダーの生成を開始した時刻から2時間後を推定します。
 ホロジュールでは、配信開始の予定時間のみが得られるためです。
 
 ## バグ・要望
 
-* [機能の要望など](https://github.com/gemmaro/holodule-ics/discussions)
-* [不具合の報告など](https://github.com/gemmaro/holodule-ics/issues)
+* [機能の要望など](https://github.com/gemmaro/holocal/discussions)
+* [不具合の報告など](https://github.com/gemmaro/holocal/issues)
 
 ## 謝辞
 

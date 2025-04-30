@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "holodule"
+name = "holocal"
 version = "0.2.4"
 description = "This is an iCalendar generator for Holodule."
 authors = ["Sarisia <git@sarisia.cc>", "gemmaro <gemmaro.dev@gmail.com>"]

@@ -5,7 +5,7 @@ import logging
 import ics
 import isodate
 
-from holodule.errors import HoloduleException
+from holocal.errors import HolocalException
 
 log = logging.getLogger(__name__)
 
@@ -86,7 +86,7 @@ class Event:
                         return
 
         if not title or not time:
-            raise HoloduleException(f"missing value: {repr(meta)}")
+            raise HolocalException(f"missing value: {repr(meta)}")
 
         self.title = title
 

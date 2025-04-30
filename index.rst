@@ -1,5 +1,5 @@
-Holodule iCalendar
-==================
+holocal
+=======
 
 翻訳： `English <en/index.html>`_
 

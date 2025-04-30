@@ -12,10 +12,10 @@ poetry run python run.py
 
 ## 環境変数
 
-- `HOLODULE_YOUTUBE_KEY`: **必須**です。YouTube Data APIのAPIキーです。
-- `HOLODULE_PAGE`: 取得するホロジュールのページのURLです。「シンプル版」でなければなりません（例：[全体](https://schedule.hololive.tv/simple "hololive production")）。
-- `HOLODULE_DIR`: 結果の`ics`ファイルを置くディレクトリです。既定は`public`です。
-- `HOLODULE_LOGLEVEL`: `logging`モジュールのログ水準です。既定で`INFO`です。
+- `HOLOCAL_YOUTUBE_KEY`: **必須**です。YouTube Data APIのAPIキーです。
+- `HOLOCAL_PAGE`: 取得するホロジュールのページのURLです。「シンプル版」でなければなりません（例：[全体](https://schedule.hololive.tv/simple "hololive production")）。
+- `HOLOCAL_DIR`: 結果の`ics`ファイルを置くディレクトリです。既定は`public`です。
+- `HOLOCAL_LOGLEVEL`: `logging`モジュールのログ水準です。既定で`INFO`です。
 
 ## TODO
 

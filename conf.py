@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Holodule iCalendar'
+project = 'holocal'
 copyright = '2025, gemmaro'
 author = 'gemmaro'
 

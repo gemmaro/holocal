@@ -8,7 +8,7 @@ __pycache__
 \!*
 
 # aiohttp client cache
-/holodule.sqlite
+/*.sqlite
 
 # Sphinx
 /build/

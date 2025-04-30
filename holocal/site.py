@@ -1,7 +1,7 @@
 import re
 
-from holodule.errors import HoloduleException
-from holodule.event import Type
+from holocal.errors import HolocalException
+from holocal.event import Type
 
 YOUTUBE_URL = r"https://www[.]youtube[.]com/watch[?]v=(?P<id>[A-Za-z0-9_-]+)"
 TWITCH_URL = r"https://www[.]twitch[.]tv/[a-z_]+"
@@ -20,7 +20,7 @@ class Site:
             return Site(url, type=Type.Twitch)
 
         else:
-            raise HoloduleException(f"unmatch: {repr(url)}")
+            raise HolocalException(f"unmatch: {repr(url)}")
 
     def __init__(self, url, type=Type.YouTube, id=None):
         self.url = url

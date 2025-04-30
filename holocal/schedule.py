@@ -5,14 +5,14 @@ from typing import Set
 from ics import Calendar
 from ics.grammar.parse import ContentLine
 
-import holodule.parser
+import holocal.parser
 
 log = getLogger(__name__)
 
 
 class Schedule():
     def parse(name, html_source):
-        parser = holodule.parser.Parser()
+        parser = holocal.parser.Parser()
         parser.feed(html_source)
         return Schedule(name, parser.events)
 
@@ -28,7 +28,7 @@ class Schedule():
     def ical_calendar(self) -> Calendar:
         cal = Calendar(
             events=[e.ical_event() for e in self.events if e.show],
-            creator="holodule-ical")
+            creator="holocal")
         cal.extra.append(ContentLine(
             "X-WR-CALNAME", value=f"Holodule - {self.name}"))
         cal.extra.append(ContentLine("X-WR-TIMEZONE", value="Asia/Tokyo"))
@@ -41,6 +41,6 @@ class Schedule():
     def dump(self, save_dir: str) -> None:
         path = Path(save_dir)
         path.mkdir(parents=True, exist_ok=True)
-        path = path/f"holodule-{self.name}.ics"
+        path = path/f"{self.name}.ics"
         with path.open('w', encoding="utf-8") as f:
             f.writelines(self.ical_calendar)

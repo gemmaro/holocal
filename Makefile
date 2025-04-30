@@ -15,7 +15,7 @@ help:
 .PHONY: help Makefile intl docs intl-dev run
 
 run:
-	poetry run python -m holodule
+	poetry run python -m holocal
 
 docs:
 	${MAKE} html
