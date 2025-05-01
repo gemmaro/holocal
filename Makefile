@@ -25,11 +25,11 @@ docs:
 
 intl:
 	[ "${CI}" = yes ] || ${MAKE} intl-dev
-	${MAKE} -e SPHINXOPTS="-D language='en'" html
+	poetry run ${MAKE} -e SPHINXOPTS="-D language='en'" html
 
 intl-dev:
-	${MAKE} gettext
-	sphinx-intl update -p build/gettext
+	poetry run ${MAKE} gettext
+	poetry run sphinx-intl update -p build/gettext
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
