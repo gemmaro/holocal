@@ -110,7 +110,8 @@ class Parser(html.parser.HTMLParser):
                                       talent=Talent(talent, mark))
                     return
 
-                log.warn(f"no mark found for {talent}")
+                if talent not in ["holo EN", "FLOW GLOW", "ReGLOSS", "ホロライブ", "ホロスターズ"]:
+                    log.warn(f"no mark found for {talent}")
 
                 self._validate_time(time)
                 self._append_link(url=self.current_hyperlink,
