@@ -110,7 +110,7 @@ class Parser(html.parser.HTMLParser):
                                       talent=Talent(talent, mark))
                     return
 
-                if talent not in ["holo EN", "FLOW GLOW", "ReGLOSS", "ホロライブ", "ホロスターズ"]:
+                if talent not in ["holo EN", "FLOW GLOW", "ReGLOSS", "ホロライブ", "ホロスターズ", "HOLOSTARS EN"]:
                     log.warn(f"no mark found for {talent}")
 
                 self._validate_time(time)
