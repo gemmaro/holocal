@@ -1,0 +1,41 @@
+name: doc
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**.md'
+      - '**.rst'
+      - '**.po'
+
+jobs:
+  build:
+    name: doc
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      packages: read
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      # These actions are from
+      # <https://github.com/orgs/python-poetry/discussions/10039>.
+      - name: Bootstrap Poetry
+        uses: python-poetry/poetry/.github/actions/bootstrap-poetry@main
+        with:
+          python-version: '3.13'
+      - name: Install Project
+        uses: python-poetry/poetry/.github/actions/poetry-install@main
+
+      - name: generate documentation
+        run: poetry run make docs
+        env:
+          CI: yes # Skip updating gettext files, which somehow causes errors
+
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-artifact@v4
+        with:
+          name: doc
+          path: public/

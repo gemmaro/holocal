@@ -25,16 +25,18 @@ jobs:
           python-version: '3.13'
       - name: Install Project
         uses: python-poetry/poetry/.github/actions/poetry-install@main
+        with:
+          args: --without dev
 
       - name: generate calendar files
         run: make run
         env:
           HOLOCAL_YOUTUBE_KEY: ${{ secrets.HOLOCAL_YOUTUBE_KEY }}
 
-      - name: generate documentation
-        run: poetry run make docs
-        env:
-          CI: yes # Skip updating gettext files, which somehow causes errors
+      - uses: actions/download-artifact@v4
+        with:
+          name: doc
+          path: public/
 
       - name: Upload static files as artifact
         id: deployment
