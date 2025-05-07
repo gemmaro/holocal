@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Holodule iCalendar \n"
 "Report-Msgid-Bugs-To: https://github.com/gemmaro/holodule-ics/issues\n"
-"POT-Creation-Date: 2025-04-30 22:33+0900\n"
-"PO-Revision-Date: 2025-04-30 22:38+0900\n"
+"POT-Creation-Date: 2025-05-07 20:14+0900\n"
+"PO-Revision-Date: 2025-05-07 20:16+0900\n"
 "Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
 "Language: en\n"
 "Language-Team: none\n"
@@ -44,37 +44,63 @@ msgid ""
 "`HOLOCAL_PAGE`: "
 "取得するホロジュールのページのURLです。「シンプル版」でなければなりません（例：[全体](https://schedule.hololive.tv/simple"
 " \"hololive production\")）。"
-msgstr "`HOLOCAL_PAGE`: Holodule page URL to get.  Must be a \"シンプル版\" (e.g. [全体](https://schedule.hololive.tv/simple \"hololive production\"))."
+msgstr ""
+"`HOLOCAL_PAGE`: Holodule page URL to get.  Must be a \"シンプル版\" (e.g. "
+"[全体](https://schedule.hololive.tv/simple \"hololive production\"))."
 
 #: ../../CONTRIBUTING.md:17
 msgid "`HOLOCAL_DIR`: 結果の`ics`ファイルを置くディレクトリです。既定は`public`です。"
-msgstr "`HOLOCAL_DIR`: Directory to place result `.ics` files.  Default to `public`."
+msgstr ""
+"`HOLOCAL_DIR`: Directory to place result `.ics` files.  Default to "
+"`public`."
 
 #: ../../CONTRIBUTING.md:18
 msgid "`HOLOCAL_LOGLEVEL`: `logging`モジュールのログ水準です。既定で`INFO`です。"
 msgstr "`HOLOCAL_LOGLEVEL`: Loglevel of `logging` module. Default to `INFO`."
 
 #: ../../CONTRIBUTING.md:20
+msgid "設計"
+msgstr "Design"
+
+#: ../../CONTRIBUTING.md:22
+msgid ""
+"イベントの動画のURLは、説明欄とURLフィールドの両方に出力しています。 一見すると重複しているようですが、これには理由があります。 "
+"基本的に、URLのフィールドは利用した方が良いです。 "
+"これは、もしカレンダーアプリが説明欄に含まれるURLを解析しない仕様のとき、リンクの遷移に手間が掛かる可能性があるためです。 "
+"一方で、URLのフィールドのみで、説明欄にURLが含まれていない場合も問題があります。 "
+"カレンダーアプリの中には、URLのフィールドを解釈しないものがあるためです。 一例ではMicrosoft "
+"Outlookのウェブ版がこれに該当します。"
+msgstr ""
+"The event video URL is output in both the description section and the URL\n"
+"field.  At first glance, this may seem redundant, but there is a reason for\n"
+"it.  Generally, it is better to use the URL field.  This is because if a\n"
+"calendar app does not parse URLs included in the description section, it may\n"
+"become cumbersome to access the link.  On the other hand, only including the\n"
+"URL in the field without placing it in the description section can also be\n"
+"problematic, as some calendar apps do not interpret the URL field.  One\n"
+"example of this is the web version of Microsoft Outlook."
+
+#: ../../CONTRIBUTING.md:30
 msgid "TODO"
 msgstr "TODO"
 
-#: ../../CONTRIBUTING.md:22
+#: ../../CONTRIBUTING.md:32
 msgid "型検査"
 msgstr "Type checking"
 
-#: ../../CONTRIBUTING.md:23
+#: ../../CONTRIBUTING.md:33
 msgid "ドキュメント"
 msgstr "Documentation"
 
-#: ../../CONTRIBUTING.md:24
+#: ../../CONTRIBUTING.md:34
 msgid "テスト"
 msgstr "Test"
 
-#: ../../CONTRIBUTING.md:26
+#: ../../CONTRIBUTING.md:36
 msgid "参考資料"
 msgstr "References"
 
-#: ../../CONTRIBUTING.md:28
+#: ../../CONTRIBUTING.md:38
 msgid ""
 "[ワークフローにスクリプトを追加する](https://docs.github.com/ja/actions/writing-workflows"
 "/choosing-what-your-workflow-does/adding-scripts-to-your-workflow "
@@ -84,7 +110,7 @@ msgstr ""
 "/writing-workflows/choosing-what-your-workflow-does/adding-scripts-to-"
 "your-workflow \"GitHub\")"
 
-#: ../../CONTRIBUTING.md:30
+#: ../../CONTRIBUTING.md:40
 msgid ""
 "[GitHub Actions　のワークフロー構文](https://docs.github.com/ja/actions/writing-"
 "workflows/workflow-syntax-for-github-actions \"GitHub\")"
@@ -92,7 +118,7 @@ msgstr ""
 "[Workflow syntax for GitHub Actions](https://docs.github.com/en/actions"
 "/writing-workflows/workflow-syntax-for-github-actions \"GitHub\")"
 
-#: ../../CONTRIBUTING.md:32
+#: ../../CONTRIBUTING.md:42
 msgid ""
 "[pipx - On Linux](https://github.com/pypa/pipx?tab=readme-ov-file#on-"
 "linux \"GitHub\")"
@@ -100,7 +126,7 @@ msgstr ""
 "[pipx - On Linux](https://github.com/pypa/pipx?tab=readme-ov-file#on-"
 "linux \"GitHub\")"
 
-#: ../../CONTRIBUTING.md:34
+#: ../../CONTRIBUTING.md:44
 msgid ""
 "[Python のビルドとテスト](https://docs.github.com/ja/actions/use-cases-and-"
 "examples/building-and-testing/building-and-testing-python \"GitHub\")"
@@ -109,7 +135,7 @@ msgstr ""
 "cases-and-examples/building-and-testing/building-and-testing-python "
 "\"GitHub\")"
 
-#: ../../CONTRIBUTING.md:36
+#: ../../CONTRIBUTING.md:46
 msgid ""
 "[deploy-pages](https://github.com/actions/deploy-pages \"GitHub\") and "
 "[Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-"
@@ -119,7 +145,7 @@ msgstr ""
 "[Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-"
 "github-pages-site \"GitHub\")."
 
-#: ../../CONTRIBUTING.md:38
+#: ../../CONTRIBUTING.md:48
 msgid ""
 "[upload-pages-artifact](https://github.com/actions/upload-pages-artifact "
 "\"GitHub\")"
