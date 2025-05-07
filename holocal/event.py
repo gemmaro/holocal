@@ -58,6 +58,11 @@ class Event:
                 self.begin = self._parse_datetime(time)
                 self.end = self._parse_datetime(end_time)
 
+                # どういうわけか終了時間が開始時間より前にくる場合がありそうなので。
+                if self.begin >= self.end:
+                    self.end = self.begin + datetime.timedelta(hours=2)
+                    self.estimated_end_time = True
+
             case {"snippet": {"title": title},
                   "liveStreamingDetails": {"scheduledStartTime": time}}:
                 self.begin = self._parse_datetime(time)
