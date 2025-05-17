@@ -9,6 +9,13 @@ requires-python = ">=3.10"
 authors = ["Sarisia <git@sarisia.cc>", "gemmaro <gemmaro.dev@gmail.com>"]
 keywords = ["schedule", "holodule"]
 
+[project.urls]
+homepage = "https://gemmaro.github.io/holocal/"
+source = "https://github.com/gemmaro/holocal"
+changelog = "https://gemmaro.github.io/holocal/CHANGELOG.html"
+documentation = "https://gemmaro.github.io/holocal/"
+issues = "https://github.com/gemmaro/holocal/issues"
+
 [tool.poetry.dependencies]
 ics = "^0.7.2"
 python-dotenv = "^0.15.0"
