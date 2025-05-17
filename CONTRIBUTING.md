@@ -1,5 +1,8 @@
 # 開発の手引き
 
+* [GitHub](https://github.com/gemmaro/holocal)
+* [PyPI](https://pypi.org/project/holocal/)
+
 ## ローカルで実行
 
 プロジェクトルートに`.env`ファイルを置き、環境変数を設定してください。
