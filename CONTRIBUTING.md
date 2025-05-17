@@ -31,6 +31,7 @@ poetry run python run.py
 
 * 型検査
 * ドキュメント
+* 翻訳を改善
 * テスト
 
 ## 参考資料
