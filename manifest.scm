@@ -42,32 +42,6 @@
     (description "Python icalendar (rfc5545) parser.")
     (license license:asl2.0)))
 
-(define-public python-aiohttp-client-cache
-  (package
-    (name "python-aiohttp-client-cache")
-    (version "0.12.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (pypi-uri "aiohttp_client_cache" version))
-       (sha256
-        (base32 "0rfjcxll4q53hmqbbng4l578b5qxp0m2fsxvydk1snvb2cbfh3z6"))))
-    (build-system pyproject-build-system)
-    (arguments (list #:tests? #f)) ;TODO
-    (propagated-inputs (list python-aiobotocore
-                             python-aiofiles
-                             python-aiohttp
-                             python-aiosqlite
-                             python-attrs
-                             python-itsdangerous
-                             python-redis
-                             python-url-normalize))
-    (native-inputs (list python-poetry-core))
-    (home-page "https://github.com/requests-cache/aiohttp-client-cache")
-    (synopsis "Persistent cache for aiohttp requests")
-    (description "Persistent cache for aiohttp requests.")
-    (license license:expat)))
-
 (concatenate-manifests
  (list (specifications->manifest (list "python@3.10" ;https://docs.python.org/ja/3.10/
                                        "python-aiohttp"
@@ -76,6 +50,7 @@
                                        "python-sphinx"
                                        "python-myst-parser"
                                        "python-sphinx-intl"
-                                       "python-mypy"))
-       (packages->manifest (list python-ics python-aiohttp-client-cache
+                                       "python-mypy"
+                                       "python-aiohttp-client-cache"))
+       (packages->manifest (list python-ics
                                  python-isodate))))
