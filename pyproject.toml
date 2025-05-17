@@ -1,12 +1,12 @@
-[tool.poetry]
+[project]
 name = "holocal"
 version = "0.3.3"
 description = "This is an iCalendar generator for Holodule."
-authors = ["Sarisia <git@sarisia.cc>", "gemmaro <gemmaro.dev@gmail.com>"]
 license = "MIT"
-license_files = ["LICENSE"]
+license_files = ["LICENSE"] # not supported in Poetry?
 readme = "README.md"
 requires-python = ">=3.10"
+authors = ["Sarisia <git@sarisia.cc>", "gemmaro <gemmaro.dev@gmail.com>"]
 keywords = ["schedule", "holodule"]
 
 [tool.poetry.dependencies]
