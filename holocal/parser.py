@@ -13,6 +13,14 @@ SPACES_WITH_NEWLINES = r"[ \r]*\n[ \n\r]*"
 DATE = r"(?P<month>\d\d)/(?P<day>\d\d)"
 TIME = r"(?P<hour>\d\d):(?P<minute>\d\d)"
 
+GROUPS = ["holo EN",
+          "FLOW GLOW",
+          "ReGLOSS",
+          "ホロライブ",
+          "ホロスターズ",
+          "HOLOSTARS EN",
+          "holo ID"]
+
 log = logging.getLogger(__name__)
 
 marks = {}
@@ -110,7 +118,7 @@ class Parser(html.parser.HTMLParser):
                                       talent=Talent(talent, mark))
                     return
 
-                if talent not in ["holo EN", "FLOW GLOW", "ReGLOSS", "ホロライブ", "ホロスターズ", "HOLOSTARS EN"]:
+                if talent not in GROUPS:
                     log.warn(f"no mark found for {talent}")
 
                 self._validate_time(time)
