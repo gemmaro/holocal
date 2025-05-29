@@ -23,10 +23,10 @@ class Site:
         else:
             raise HolocalException(f"unmatch: {repr(url)}")
 
-    def __init__(self, url, type=Type.YouTube, id=None):
+    def __init__(self, url, site_type: Type = Type.YouTube, event_id=None):
         self.url = url
-        self.type = type
-        self.id = id
+        self.type = site_type
+        self.id = event_id
 
     def __repr__(self):
         return f"<{self.type} {self.id or self.url}>"
