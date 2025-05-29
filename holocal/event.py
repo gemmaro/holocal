@@ -50,9 +50,9 @@ class Event:
             **kwargs,
         )
 
-    def assign(self, meta: dict) -> bool:
-        end_time = None
-
+    def assign(self, meta: dict) -> None:
+        title = None
+        time = None
         match meta:
             case {"snippet": {"title": title},
                   "liveStreamingDetails": {"actualStartTime": time,
