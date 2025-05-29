@@ -108,12 +108,12 @@ class Holocal:
 
     async def do_get_videos(self, video_ids: Sequence[str]) -> dict:
         async with self.session.get(
-            YOUTUBE_API,
-            params={
-                "key": self.yt_key,
-                "part": "id,snippet,liveStreamingDetails,contentDetails",
-                "id": ",".join(video_ids),
-            },
+                YOUTUBE_API,
+                params={
+                    "key": self.yt_key,
+                    "part": "id,snippet,liveStreamingDetails,contentDetails",
+                    "id": ",".join(video_ids),
+                },
         ) as resp:
             if resp.status != 200:
                 raise HTTPStatusError(resp.status)
