@@ -75,7 +75,7 @@ class Holocal:
             if resp.status != 200:
                 log.error(
                     f"({target}) failed to get: {resp.status} {text}'")
-                return
+                return None
 
             return target, text
 
