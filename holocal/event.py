@@ -37,7 +37,7 @@ class Event:
         description = f"{self.title}\n{self.site.url}"
         if self.estimated_end_time:
             description += "\n\n※終了時刻は推定です。\n" \
-                "Note: The end time is an estimate."
+                           "Note: The end time is an estimate."
 
         return ics.Event(
             name=f"{self.talent}: {self.title}",
