@@ -12,6 +12,8 @@ log = logging.getLogger(__name__)
 
 class Event:
     def __init__(self, site, talent, datetime):
+        self.title = None
+        self.begin = None
         self.site = site
         self.talent = talent
         self.datetime = datetime
