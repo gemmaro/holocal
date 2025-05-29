@@ -44,4 +44,4 @@ class Schedule:
         path.mkdir(parents=True, exist_ok=True)
         path = path / f"{self.name}.ics"
         with path.open('w', encoding="utf-8") as f:
-            f.writelines(self.ical_calendar)
+            f.writelines(self.ical_calendar.serialize())
