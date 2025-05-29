@@ -10,11 +10,12 @@ import holocal.parser
 log = getLogger(__name__)
 
 
-class Schedule():
-    def parse(name, html_source):
+class Schedule:
+    @classmethod
+    def parse(cls, name: str, html_source):
         parser = holocal.parser.Parser()
         parser.feed(html_source)
-        return Schedule(name, parser.events)
+        return cls(name, parser.events)
 
     def __init__(self, name: str, events) -> None:
         self.name = name
@@ -41,6 +42,6 @@ class Schedule():
     def dump(self, save_dir: str) -> None:
         path = Path(save_dir)
         path.mkdir(parents=True, exist_ok=True)
-        path = path/f"{self.name}.ics"
+        path = path / f"{self.name}.ics"
         with path.open('w', encoding="utf-8") as f:
             f.writelines(self.ical_calendar)
