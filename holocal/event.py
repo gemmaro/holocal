@@ -86,9 +86,9 @@ class Event:
                         return
 
                     case Type.YouTube:
-                        log.warn("Possibly private video?  "
-                                 "Empty metadata.  "
-                                 f"{repr(self)}")
+                        log.warning("Possibly private video?  "
+                                    "Empty metadata.  "
+                                    f"{repr(self)}")
                         self.show = False
                         return
 
