@@ -147,13 +147,13 @@ class Parser(html.parser.HTMLParser):
 
     def _append_link(self, url, talent):
         year = datetime.datetime.now().year
-        tzone = datetime.timezone(datetime.timedelta(hours=9))
+        timezone = datetime.timezone(datetime.timedelta(hours=9))
         time = datetime.datetime(year,
                                  self._date.month,
                                  self._date.day,
                                  self._time.hour,
                                  self._time.minute,
-                                 tzinfo=tzone)
+                                 tzinfo=timezone)
         time = time.astimezone(datetime.timezone(datetime.timedelta(hours=9)))
         self.events.append(Event(site=Site.parse_url(url),
                                  talent=talent,
