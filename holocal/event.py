@@ -10,6 +10,10 @@ from holocal.errors import HolocalException
 log = logging.getLogger(__name__)
 
 
+def _parse_datetime(source):
+    return datetime.datetime.strptime(source, "%Y-%m-%dT%H:%M:%SZ")
+
+
 class Event:
     def __init__(self, site, talent, datetime):
         self.title = None
@@ -57,8 +61,8 @@ class Event:
             case {"snippet": {"title": title},
                   "liveStreamingDetails": {"actualStartTime": time,
                                            "actualEndTime": end_time}}:
-                self.begin = self._parse_datetime(time)
-                self.end = self._parse_datetime(end_time)
+                self.begin = _parse_datetime(time)
+                self.end = _parse_datetime(end_time)
 
                 # どういうわけか終了時間が開始時間より前にくる場合がありそうなので。
                 if self.begin >= self.end:
@@ -67,7 +71,7 @@ class Event:
 
             case {"snippet": {"title": title},
                   "liveStreamingDetails": {"scheduledStartTime": time}}:
-                self.begin = self._parse_datetime(time)
+                self.begin = _parse_datetime(time)
                 self.end = max(self.begin, datetime.datetime.now()) \
                            + datetime.timedelta(hours=2)
                 self.estimated_end_time = True
@@ -76,7 +80,7 @@ class Event:
             # TODO: is this correct?
             case {"snippet": {"title": title, "publishedAt": time},
                   "contentDetails": {"duration": duration}}:
-                self.begin = self._parse_datetime(time)
+                self.begin = _parse_datetime(time)
                 self.duration = isodate.parse_duration(duration)
 
             case None:
@@ -96,9 +100,6 @@ class Event:
             raise HolocalException(f"missing value: {repr(meta)}")
 
         self.title = title
-
-    def _parse_datetime(self, source):
-        return datetime.datetime.strptime(source, "%Y-%m-%dT%H:%M:%SZ")
 
     def __repr__(self):
         return f"<{self.site}\t{self.talent}\t{self.datetime}>"
