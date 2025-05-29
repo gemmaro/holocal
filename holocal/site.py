@@ -8,16 +8,17 @@ TWITCH_URL = r"https://www[.]twitch[.]tv/[a-z_]+"
 
 
 class Site:
-    def parse_url(url):
+    @classmethod
+    def parse_url(cls, url):
         match = re.search(YOUTUBE_URL, url)
         if match:
-            return Site(url, id=match["id"])
+            return cls(url, event_id=match["id"])
 
         elif url == 'https://abema.app/hfAA':
-            return Site(url, type=Type.Abema)
+            return cls(url, site_type=Type.Abema)
 
         elif re.match(TWITCH_URL, url):
-            return Site(url, type=Type.Twitch)
+            return cls(url, site_type=Type.Twitch)
 
         else:
             raise HolocalException(f"unmatch: {repr(url)}")
