@@ -49,7 +49,7 @@ class Parser(html.parser.HTMLParser):
                 self._state = State.ANCHOR
 
             case State.INSIDE if tag == "div" \
-                    and dict(attrs).get("class") == "holodule navbar-text":
+                                 and dict(attrs).get("class") == "holodule navbar-text":
                 self._tags.append(tag)
                 self._state = State.DATE
 
@@ -155,7 +155,7 @@ class Parser(html.parser.HTMLParser):
         time = time.astimezone(datetime.timezone(datetime.timedelta(hours=9)))
         self.events.append(Event(site=Site.parse_url(url),
                                  talent=talent,
-                                 datetime=time))
+                                 date_time=time))
 
 
 class Date:

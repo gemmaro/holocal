@@ -15,12 +15,12 @@ def _parse_datetime(source):
 
 
 class Event:
-    def __init__(self, site, talent, datetime):
+    def __init__(self, site, talent, date_time):
         self.title = None
         self.begin = None
         self.site = site
         self.talent = talent
-        self.datetime = datetime
+        self.datetime = date_time
         self.show = True
         self.end = None
         self.estimated_end_time = False
