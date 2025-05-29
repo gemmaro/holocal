@@ -69,7 +69,7 @@ class Event:
                   "liveStreamingDetails": {"scheduledStartTime": time}}:
                 self.begin = self._parse_datetime(time)
                 self.end = max(self.begin, datetime.datetime.now()) \
-                    + datetime.timedelta(hours=2)
+                           + datetime.timedelta(hours=2)
                 self.estimated_end_time = True
 
             # "publishedAt" is for video case.
