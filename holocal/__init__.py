@@ -35,7 +35,7 @@ class Holocal:
 
     async def run(self) -> int:
         # ClientSession.__aenter__ does nothing but ClientSession.__aexit__
-        # closes this sessoin, so we have to do that.
+        # closes this session, so we have to do that.
         # https://github.com/aio-libs/aiohttp/blob/fe647a08d1acb53404b703b46b37409602ab18b4/aiohttp/client.py#L986
         self.session = aiohttp_client_cache.CachedSession(
             cache=aiohttp_client_cache.SQLiteBackend("holocal"),
