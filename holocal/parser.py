@@ -33,6 +33,8 @@ with open("marks.csv", newline="") as f:
 class Parser(html.parser.HTMLParser):
     def __init__(self):
         super().__init__()
+        self._date = None
+        self.current_hyperlink = None
         self._state = State.OUTSIDE
         self._tags = []
         self.events = []
