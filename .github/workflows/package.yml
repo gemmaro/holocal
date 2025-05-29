@@ -17,7 +17,8 @@ jobs:
           python-version: '3.13'
       - name: Install Project
         uses: python-poetry/poetry/.github/actions/poetry-install@main
-        args: --without dev
+        with:
+          args: --without dev
 
       - name: build a binary wheel and a source tarball
         run: poetry build
