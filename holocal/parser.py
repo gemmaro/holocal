@@ -64,9 +64,6 @@ class Parser(html.parser.HTMLParser):
             case State.OUTSIDE | State.ANCHOR | State.REST:
                 pass
 
-            case _:
-                raise HolocalException()
-
     def handle_data(self, data):
         match self._state:
             case State.ANCHOR:
@@ -100,9 +97,6 @@ class Parser(html.parser.HTMLParser):
 
             case State.ANCHOR | State.OUTSIDE | State.REST:
                 pass
-
-            case _:
-                raise HolocalException()
 
     def _reset_current_link(self):
         self.current_hyperlink = None
