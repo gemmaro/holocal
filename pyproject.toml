@@ -39,6 +39,7 @@ extras = ["sqlite"]
 sphinx = "^6.2"
 myst-parser = "^3.0"
 sphinx-intl = "^2.0"
+ty = "^0.0.1"
 
 [build-system]
 requires = ["poetry-core"]
