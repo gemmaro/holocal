@@ -31,6 +31,8 @@ if __name__ == "__main__":
         log.critical("no youtube_key is given")
         sys.exit(1)
 
+    assert youtube_key
+
     h = holocal.Holocal(holocal_page,
-                          youtube_key, save_dir)
+                        youtube_key, save_dir)
     sys.exit(asyncio.run(h.run()))
