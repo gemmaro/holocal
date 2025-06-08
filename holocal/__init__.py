@@ -31,7 +31,7 @@ class Holocal:
         self.save_dir = save_dir
 
         self.session = None
-        self.videos = {}
+        self.videos: dict = {}
 
     async def run(self) -> int:
         # ClientSession.__aenter__ does nothing but ClientSession.__aexit__

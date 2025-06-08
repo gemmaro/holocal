@@ -40,7 +40,7 @@ class Parser(html.parser.HTMLParser):
         self.events = []
         self._reset_current_link()
 
-    def handle_starttag(self, tag, attrs):
+    def handle_starttag(self, tag: str, attrs: list) -> None:
         match self._state:
             case State.OUTSIDE if dict(attrs).get("id") == "all":
                 self._state = State.INSIDE
