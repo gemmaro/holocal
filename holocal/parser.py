@@ -1,9 +1,9 @@
 import csv
 import datetime
-import enum
 import html.parser
 import logging
 import re
+from enum import StrEnum
 
 from holocal.errors import HolocalException
 from holocal.event import Event, Talent
@@ -166,7 +166,7 @@ class Time:
         self.minute = minute
 
 
-class State(enum.Enum):
+class State(StrEnum):
     OUTSIDE = "outside of anchors"
     INSIDE = "inside of anchors"
     ANCHOR = "reading anchor text"
