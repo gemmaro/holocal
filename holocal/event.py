@@ -1,9 +1,11 @@
 import enum
 import logging
 from datetime import datetime, timedelta
+from typing import TypedDict, NotRequired
 
 import ics
 import isodate
+from isodate import Duration
 
 from holocal.errors import HolocalException
 
@@ -14,20 +16,47 @@ def _parse_datetime(source: str) -> datetime:
     return datetime.strptime(source, "%Y-%m-%dT%H:%M:%SZ")
 
 
+class Talent:
+    def __init__(self, name, mark=None):
+        self.name = name
+        self.mark = mark
+
+    def __str__(self):
+        """This is used in event name (summary)."""
+        mark = self.mark or ""
+        return f"{mark}{self.name}"
+
+    def __repr__(self):
+        if self.mark:
+            return f"<{self.name} {self.mark}>"
+
+        else:
+            return f"<{self.name}>"
+
+
+class HoursDuration(TypedDict):
+    hours: int
+
+
+class IcsEventArgs(TypedDict):
+    end: NotRequired[datetime]
+    duration: NotRequired[timedelta | Duration | HoursDuration]
+
+
 class Event:
-    def __init__(self, site, talent, date_time):
+    def __init__(self, site, talent: Talent, date_time):
         self.title = None
-        self.begin = None
+        self.begin: datetime | None = None
         self.site = site
         self.talent = talent
         self.datetime = date_time
         self.show = True
-        self.end = None
+        self.end: datetime | None = None
         self.estimated_end_time = False
-        self.duration = None
+        self.duration: timedelta | Duration | None = None
 
     def ical_event(self) -> ics.Event:
-        kwargs = {}
+        kwargs: IcsEventArgs = {}
         if self.end:
             kwargs["end"] = self.end
 
@@ -35,7 +64,7 @@ class Event:
             kwargs["duration"] = self.duration
 
         else:
-            kwargs["duration"] = {"hours": 2}
+            kwargs["duration"] = HoursDuration(hours=2)
             self.estimated_end_time = True
 
         description = f"{self.title}\n{self.site.url}"
@@ -56,7 +85,7 @@ class Event:
 
     def assign(self, meta: dict) -> None:
         title = None
-        time = None
+        time: str | None = None
         match meta:
             case {"snippet": {"title": title},
                   "liveStreamingDetails": {"actualStartTime": time,
@@ -80,7 +109,10 @@ class Event:
             # TODO: is this correct?
             case {"snippet": {"title": title, "publishedAt": time},
                   "contentDetails": {"duration": duration}}:
+
+                assert time
                 self.begin = _parse_datetime(time)
+
                 self.duration = isodate.parse_duration(duration)
 
             case None:
@@ -103,24 +135,6 @@ class Event:
 
     def __repr__(self):
         return f"<{self.site}\t{self.talent}\t{self.datetime}>"
-
-
-class Talent:
-    def __init__(self, name, mark=None):
-        self.name = name
-        self.mark = mark
-
-    def __str__(self):
-        """This is used in event name (summary)."""
-        mark = self.mark or ""
-        return f"{mark}{self.name}"
-
-    def __repr__(self):
-        if self.mark:
-            return f"<{self.name} {self.mark}>"
-
-        else:
-            return f"<{self.name}>"
 
 
 class Type(enum.Enum):
