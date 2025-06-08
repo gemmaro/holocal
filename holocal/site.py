@@ -9,7 +9,7 @@ TWITCH_URL = r"https://www[.]twitch[.]tv/[a-z_]+"
 
 class Site:
     @classmethod
-    def parse_url(cls, url):
+    def parse_url(cls, url: str):
         match = re.search(YOUTUBE_URL, url)
         if match:
             return cls(url, event_id=match["id"])
@@ -23,10 +23,10 @@ class Site:
         else:
             raise HolocalException(f"unmatch: {repr(url)}")
 
-    def __init__(self, url, site_type: Type = Type.YouTube, event_id=None):
-        self.url = url
-        self.type = site_type
-        self.id = event_id
+    def __init__(self, url: str, site_type: Type = Type.YouTube, event_id: str | None = None):
+        self.url: str = url
+        self.type: Type = site_type
+        self.id: str | None = event_id
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<{self.type} {self.id or self.url}>"
