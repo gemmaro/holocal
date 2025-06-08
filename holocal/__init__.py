@@ -47,7 +47,10 @@ class Holocal:
 
         status = 0
         await self.do_run()
+
+        assert self.session
         await self.session.close()
+
         return status
 
     async def do_run(self) -> None:
@@ -70,6 +73,8 @@ class Holocal:
 
     async def get_page(self, target: str = "") -> Optional[Tuple[str, str]]:
         log.info(f"({target}) getting page...")
+
+        assert self.session
         async with self.session.get(f"{self.page_url}/{target}") as resp:
             text = await resp.text()
             if resp.status != 200:
@@ -107,6 +112,7 @@ class Holocal:
                 self.videos[item["id"]] = item
 
     async def do_get_videos(self, video_ids: Sequence[str]) -> dict:
+        assert self.session
         async with self.session.get(
                 YOUTUBE_API,
                 params={
