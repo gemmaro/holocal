@@ -1,6 +1,6 @@
-import datetime
 import enum
 import logging
+from datetime import datetime, timedelta
 
 import ics
 import isodate
@@ -10,8 +10,8 @@ from holocal.errors import HolocalException
 log = logging.getLogger(__name__)
 
 
-def _parse_datetime(source):
-    return datetime.datetime.strptime(source, "%Y-%m-%dT%H:%M:%SZ")
+def _parse_datetime(source: str) -> datetime:
+    return datetime.strptime(source, "%Y-%m-%dT%H:%M:%SZ")
 
 
 class Event:
@@ -66,14 +66,14 @@ class Event:
 
                 # どういうわけか終了時間が開始時間より前にくる場合がありそうなので。
                 if self.begin >= self.end:
-                    self.end = self.begin + datetime.timedelta(hours=2)
+                    self.end = self.begin + timedelta(hours=2)
                     self.estimated_end_time = True
 
             case {"snippet": {"title": title},
                   "liveStreamingDetails": {"scheduledStartTime": time}}:
                 self.begin = _parse_datetime(time)
-                self.end = max(self.begin, datetime.datetime.now()) \
-                           + datetime.timedelta(hours=2)
+                self.end = max(self.begin, datetime.now()) \
+                           + timedelta(hours=2)
                 self.estimated_end_time = True
 
             # "publishedAt" is for video case.
