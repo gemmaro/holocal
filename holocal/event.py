@@ -1,6 +1,6 @@
-import enum
 import logging
 from datetime import datetime, timedelta
+from enum import StrEnum
 from typing import TypedDict, NotRequired
 
 import ics
@@ -8,6 +8,7 @@ import isodate
 from isodate import Duration
 
 from holocal.errors import HolocalException
+from holocal.site import Site
 
 log = logging.getLogger(__name__)
 
@@ -17,16 +18,16 @@ def _parse_datetime(source: str) -> datetime:
 
 
 class Talent:
-    def __init__(self, name, mark=None):
+    def __init__(self, name: str, mark: str | None = None):
         self.name = name
         self.mark = mark
 
-    def __str__(self):
+    def __str__(self) -> str:
         """This is used in event name (summary)."""
         mark = self.mark or ""
         return f"{mark}{self.name}"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         if self.mark:
             return f"<{self.name} {self.mark}>"
 
@@ -44,15 +45,15 @@ class IcsEventArgs(TypedDict):
 
 
 class Event:
-    def __init__(self, site, talent: Talent, date_time):
-        self.title = None
+    def __init__(self, site: Site, talent: Talent, date_time: datetime):
+        self.title: str | None = None
         self.begin: datetime | None = None
-        self.site = site
-        self.talent = talent
-        self.datetime = date_time
-        self.show = True
+        self.site: Site = site
+        self.talent: Talent = talent
+        self.datetime: datetime = date_time
+        self.show: bool = True
         self.end: datetime | None = None
-        self.estimated_end_time = False
+        self.estimated_end_time: bool = False
         self.duration: timedelta | Duration | None = None
 
     def ical_event(self) -> ics.Event:
@@ -84,7 +85,7 @@ class Event:
         )
 
     def assign(self, meta: dict) -> None:
-        title = None
+        title: str | None = None
         time: str | None = None
         match meta:
             case {"snippet": {"title": title},
@@ -133,11 +134,11 @@ class Event:
 
         self.title = title
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<{self.site}\t{self.talent}\t{self.datetime}>"
 
 
-class Type(enum.Enum):
+class Type(StrEnum):
     YouTube = "YouTube"
     Abema = "Abema"
     Twitch = "Twitch"
