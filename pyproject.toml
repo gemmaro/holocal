@@ -42,6 +42,10 @@ sphinx-intl = "^2.0"
 ty = "^0.0.1a8"
 mypy = "^1.16.0"
 
+[[tool.mypy.overrides]]
+module = ["ics.*", "isodate.*"]
+ignore_missing_imports = true
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
