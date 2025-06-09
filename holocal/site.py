@@ -1,7 +1,7 @@
 import re
 
 from holocal.errors import HolocalException
-from holocal.event import Type
+from holocal.site_type import Type
 
 YOUTUBE_URL = r"https://www[.]youtube[.]com/watch[?]v=(?P<id>[A-Za-z0-9_-]+)"
 TWITCH_URL = r"https://www[.]twitch[.]tv/[a-z_]+"

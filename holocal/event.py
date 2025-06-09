@@ -1,6 +1,5 @@
 import logging
 from datetime import datetime, timedelta
-from enum import StrEnum
 from typing import TypedDict, NotRequired
 
 import ics
@@ -9,6 +8,7 @@ from isodate import Duration
 
 from holocal.errors import HolocalException
 from holocal.site import Site
+from holocal.site_type import Type
 
 log = logging.getLogger(__name__)
 
@@ -136,9 +136,3 @@ class Event:
 
     def __repr__(self) -> str:
         return f"<{self.site}\t{self.talent}\t{self.datetime}>"
-
-
-class Type(StrEnum):
-    YouTube = "YouTube"
-    Abema = "Abema"
-    Twitch = "Twitch"
