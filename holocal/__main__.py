@@ -1,11 +1,41 @@
 import asyncio
+import json
 import logging
 import sys
+import urllib.request
 from os import getenv
 
 from dotenv import load_dotenv
 
 import holocal
+
+SLACK_WEBHOOK_URL = getenv("SLACK_WEBHOOK_URL")
+
+
+class SlackWarningHandler(logging.Handler):
+    def emit(self, record):
+        if record.levelno == logging.WARNING:
+            log_entry = self.format(record)
+            payload = {
+                "text": f":warning: {log_entry}"
+            }
+
+            if SLACK_WEBHOOK_URL:
+                try:
+                    req = urllib.request.Request(
+                        url=SLACK_WEBHOOK_URL,
+                        data=json.dumps(payload).encode('utf-8'),
+                        headers={'Content-Type': 'application/json'},
+                        method='POST'
+                    )
+                    with urllib.request.urlopen(req) as response:
+                        if response.status != 200:
+                            print(f"Slack webhook failed with status {response.status}")
+                except Exception as e:
+                    print(f"Failed to send Slack message: {e}")
+            else:
+                print("SLACK_WEBHOOK_URL environment variable is not set.")
+
 
 load_dotenv()
 logging.basicConfig(
@@ -15,6 +45,8 @@ logging.basicConfig(
 )
 
 log = logging.getLogger()
+slack_handler = SlackWarningHandler()
+log.addHandler(slack_handler)
 
 if __name__ == "__main__":
     # argparse いる？ 使わなそう…
