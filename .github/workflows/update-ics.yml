@@ -30,6 +30,7 @@ jobs:
         run: make run
         env:
           HOLOCAL_YOUTUBE_KEY: ${{ secrets.HOLOCAL_YOUTUBE_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: generate documentation
         run: poetry run make docs
