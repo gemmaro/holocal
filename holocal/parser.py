@@ -115,7 +115,7 @@ class Parser(html.parser.HTMLParser):
                     return
 
                 if talent not in GROUPS:
-                    log.warning(f"no mark found for {talent}")
+                    log.warning(f"no mark found for {repr(talent)}")
 
                 self._validate_time(time)
                 self._append_link(url=self.current_hyperlink,
