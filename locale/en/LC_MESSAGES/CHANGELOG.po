@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Holodule iCalendar \n"
 "Report-Msgid-Bugs-To: https://github.com/gemmaro/holodule-ics/issues\n"
-"POT-Creation-Date: 2025-06-18 20:18+0900\n"
-"PO-Revision-Date: 2025-06-18 20:19+0900\n"
+"POT-Creation-Date: 2025-07-20 18:37+0900\n"
+"PO-Revision-Date: 2025-07-20 18:39+0900\n"
 "Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
 "Language: en\n"
 "Language-Team: none\n"
@@ -24,114 +24,122 @@ msgid "変更履歴"
 msgstr "ChangeLog"
 
 #: ../../CHANGELOG.md:3
+msgid "0.3.7"
+msgstr "0.3.7"
+
+#: ../../CHANGELOG.md:5
+msgid "TikTokのイベントに対応しました。"
+msgstr "TikTok events is now supported."
+
+#: ../../CHANGELOG.md:7
 msgid "0.3.6"
 msgstr "0.3.6"
 
-#: ../../CHANGELOG.md:5 ../../CHANGELOG.md:9 ../../CHANGELOG.md:17
-#: ../../CHANGELOG.md:21 ../../CHANGELOG.md:27
+#: ../../CHANGELOG.md:9 ../../CHANGELOG.md:13 ../../CHANGELOG.md:21
+#: ../../CHANGELOG.md:25 ../../CHANGELOG.md:31
 msgid "タレントのマークを追加しました。"
 msgstr "I have added the talent marks."
 
-#: ../../CHANGELOG.md:7
+#: ../../CHANGELOG.md:11
 msgid "0.3.5"
 msgstr "0.3.5"
 
-#: ../../CHANGELOG.md:11
+#: ../../CHANGELOG.md:15
 msgid "0.3.4"
 msgstr "0.3.4"
 
-#: ../../CHANGELOG.md:13
+#: ../../CHANGELOG.md:17
 msgid "利用者の目に触れる変更はありません。"
 msgstr "There are no visible changes for users."
 
-#: ../../CHANGELOG.md:15
+#: ../../CHANGELOG.md:19
 msgid "0.3.3"
 msgstr "0.3.3"
 
-#: ../../CHANGELOG.md:19
+#: ../../CHANGELOG.md:23
 msgid "0.3.2"
 msgstr "0.3.2"
 
-#: ../../CHANGELOG.md:23
+#: ../../CHANGELOG.md:27
 msgid "予期しないエラーの防止処理を入れました。"
 msgstr "Added error prevention measures to handle unexpected issues."
 
-#: ../../CHANGELOG.md:25
+#: ../../CHANGELOG.md:29
 msgid "0.3.1"
 msgstr "0.3.1"
 
-#: ../../CHANGELOG.md:29
+#: ../../CHANGELOG.md:33
 msgid "0.3.0"
 msgstr "0.3.0"
 
-#: ../../CHANGELOG.md:31
+#: ../../CHANGELOG.md:35
 msgid "名前をholodule-icsからholocalに変えました。"
 msgstr "The name has been changed from holodule-ics to holocal."
 
-#: ../../CHANGELOG.md:33
+#: ../../CHANGELOG.md:37
 msgid "イベントにURLフィールドを付けました。 リンクを開きやすくなったかもしれません。"
 msgstr ""
 "A URL field has been added to the event.  It might now be easier to open "
 "links."
 
-#: ../../CHANGELOG.md:36
+#: ../../CHANGELOG.md:40
 msgid "タレントのマークを表示するようにしました。 見落としているマークがあったときは、随時修正します。"
 msgstr ""
 "Talent marks are now displayed.  If any marks are missing, they will be "
 "corrected."
 
-#: ../../CHANGELOG.md:39
+#: ../../CHANGELOG.md:43
 msgid "0.2.4"
 msgstr "0.2.4"
 
-#: ../../CHANGELOG.md:41
+#: ../../CHANGELOG.md:45
 msgid "イベントの時間が推定されなかったときのエラーを修正しました。"
 msgstr "Fixed an error where the event time could not be estimated."
 
-#: ../../CHANGELOG.md:43
+#: ../../CHANGELOG.md:47
 msgid "0.2.3"
 msgstr "0.2.3"
 
-#: ../../CHANGELOG.md:45
+#: ../../CHANGELOG.md:49
 msgid "イベントの終了時刻をできるだけ調整するようにしました。"
 msgstr "The script tried to adjust the event's end time as much as possible."
 
-#: ../../CHANGELOG.md:47
+#: ../../CHANGELOG.md:51
 msgid "動画の場合は、その時間を使うようにしました。"
 msgstr "In the case of videos, the script uses that time."
 
-#: ../../CHANGELOG.md:49
+#: ../../CHANGELOG.md:53
 msgid "0.2.2"
 msgstr "0.2.2"
 
-#: ../../CHANGELOG.md:51
+#: ../../CHANGELOG.md:55
 msgid "非公開になっていそうな動画をスキップするようにしました。"
 msgstr ""
 "I've adjusted it so that videos that are likely to be private will now be"
 " skipped."
 
-#: ../../CHANGELOG.md:53
+#: ../../CHANGELOG.md:57
 msgid "既に終了している配信は、その終了時刻を使うようにしました。 以前は固定で2時間としていました。"
 msgstr ""
 "I have updated it so that already-ended streams now use their actual end "
 "time.\n"
 "Previously, it was fixed at 2 hours."
 
-#: ../../CHANGELOG.md:56
+#: ../../CHANGELOG.md:60
 msgid "0.2.1"
 msgstr "0.2.1"
 
-#: ../../CHANGELOG.md:58
+#: ../../CHANGELOG.md:62
 msgid "AbemaとTwitchの配信もカレンダーファイルに生成されるようにしました。 ウェブサイトを設置しました。"
 msgstr ""
 "Streams from Abema and Twitch are now included in the calendar file.\n"
 "Also a website has been created to host the program's documentation."
 
-#: ../../CHANGELOG.md:61
+#: ../../CHANGELOG.md:65
 msgid "0.2.0"
 msgstr "0.2.0"
 
-#: ../../CHANGELOG.md:63
+#: ../../CHANGELOG.md:67
 msgid "iCalendarファイルを提供するURL以外は、利用者の目に触れる変更はなさそうです。"
 msgstr ""
 "Other than the URL providing the iCalendar file, there are likely no "
