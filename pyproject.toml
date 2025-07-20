@@ -1,6 +1,6 @@
 [project]
 name = "holocal"
-version = "0.3.7"
+version = "0.3.8"
 description = "This is an iCalendar generator for Holodule."
 license = "MIT"
 license_files = ["LICENSE"] # not supported in Poetry?
