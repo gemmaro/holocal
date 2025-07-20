@@ -37,7 +37,8 @@ class Schedule:
 
     def assign_youtube(self, yt_meta: dict) -> None:
         for event in self.events:
-            event.assign(yt_meta.get(event.site.id))
+            if meta := yt_meta.get(event.site.id):
+                event.assign(meta)
 
     def dump(self, save_dir: str) -> None:
         path = Path(save_dir)
