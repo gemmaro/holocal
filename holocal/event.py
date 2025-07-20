@@ -73,8 +73,12 @@ class Event:
             description += "\n\n※終了時刻は推定です。\n" \
                            "Note: The end time is an estimate."
 
+        name = str(self.talent)
+        if self.title:
+            name += f": {self.title}"
+
         return ics.Event(
-            name=f"{self.talent}: {self.title}",
+            name=name,
             begin=self.datetime,
             description=description,
             # use video_id as uid will make order of events static
