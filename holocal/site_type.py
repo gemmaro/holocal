@@ -5,3 +5,4 @@ class Type(StrEnum):
     YouTube = "YouTube"
     Abema = "Abema"
     Twitch = "Twitch"
+    TikTok = "TikTok"
