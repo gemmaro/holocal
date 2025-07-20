@@ -102,8 +102,7 @@ class Event:
             case {"snippet": {"title": title},
                   "liveStreamingDetails": {"scheduledStartTime": time}}:
                 self.begin = _parse_datetime(time)
-                self.end = max(self.begin, datetime.now()) \
-                           + timedelta(hours=2)
+                self.end = max(self.begin, datetime.now()) + timedelta(hours=2)
                 self.estimated_end_time = True
 
             # "publishedAt" is for video case.
