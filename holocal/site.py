@@ -17,6 +17,9 @@ class Site:
         elif url == 'https://abema.app/hfAA':
             return cls(url, site_type=Type.Abema)
 
+        elif url == 'https://www.tiktok.com/@houshoumarine_hololivejp':
+            return cls(url, site_type=Type.TikTok)
+
         elif re.match(TWITCH_URL, url):
             return cls(url, site_type=Type.Twitch)
 
