@@ -23,7 +23,10 @@ class Site:
         else:
             raise HolocalException(f"unmatch: {repr(url)}")
 
-    def __init__(self, url: str, site_type: Type = Type.YouTube, event_id: str | None = None):
+    def __init__(self,
+                 url: str,
+                 site_type: Type = Type.YouTube,
+                 event_id: str | None = None):
         self.url: str = url
         self.type: Type = site_type
         self.id: str | None = event_id
