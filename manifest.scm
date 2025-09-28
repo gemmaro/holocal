@@ -42,7 +42,7 @@
     (license license:asl2.0)))
 
 (concatenate-manifests
- (list (specifications->manifest (list "python@3.10" ;https://docs.python.org/ja/3.10/
+ (list (specifications->manifest (list "python"
                                        "python-aiohttp"
                                        "python-dotenv"
                                        "poetry"
