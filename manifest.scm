@@ -33,7 +33,6 @@
     (native-inputs (list python-setuptools
                          python-wheel
                          python-pip
-                         nss-certs-for-test
                          python-mypy
                          python-pytest-sugar
                          python-freezegun))
