@@ -19,7 +19,8 @@ GROUPS = ["holo EN",
           "ホロライブ",
           "ホロスターズ",
           "HOLOSTARS EN",
-          "holo ID"]
+          "holo ID",
+          "ホロカ公式"]
 
 log = logging.getLogger(__name__)
 
